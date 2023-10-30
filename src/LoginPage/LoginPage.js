@@ -1,5 +1,8 @@
 import React from 'react';
 import style from './LoginPage.module.css';
+import { useNavigate } from 'react-router-dom';
+import KakaoLogin from './KakaoLogin';
+import { NavLink } from 'react-router-dom';
 
     function Content() {
 
@@ -14,7 +17,7 @@ import style from './LoginPage.module.css';
 
         return (
             <div className={style.kakao}>
-                <h5>Login with kakao</h5>
+                <h5><NavLink to='/KakaoLogin'>Login with kakao</NavLink></h5>
             </div>
         )
     }
@@ -23,7 +26,7 @@ import style from './LoginPage.module.css';
         return(
             <>
                 <div className={style.login}>
-                    <h3>Sign in to 부르즈할리파</h3>
+                    <h3>Sign in to 두유타운</h3>
                     <Kakao/>
                 </div>
             </>
@@ -31,7 +34,8 @@ import style from './LoginPage.module.css';
     }
 
     function LoginPage(props) {
-
+        const navigate = useNavigate();
+        navigate('/KakaoLogin')
         return (
             <div className={style.container}>
                 <Content/>
