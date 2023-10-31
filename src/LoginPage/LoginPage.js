@@ -1,8 +1,6 @@
 import React from 'react';
 import style from './LoginPage.module.css';
-import { useNavigate } from 'react-router-dom';
-import KakaoLogin from './KakaoLogin';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
     function Content() {
 
@@ -16,8 +14,10 @@ import { NavLink } from 'react-router-dom';
     function Kakao() {
 
         return (
-            <div className={style.kakao}>
-                <h5><NavLink to='/KakaoLogin'>Login with kakao</NavLink></h5>
+            <div>
+                <Link to={'/KakaoLogin'}>
+                    <p className={style.kakao}>Login with kakao</p>
+                </Link>
             </div>
         )
     }
@@ -34,8 +34,6 @@ import { NavLink } from 'react-router-dom';
     }
 
     function LoginPage(props) {
-        const navigate = useNavigate();
-        navigate('/KakaoLogin')
         return (
             <div className={style.container}>
                 <Content/>
