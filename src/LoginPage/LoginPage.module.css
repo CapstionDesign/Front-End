@@ -20,12 +20,14 @@
         border: none;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
         display: flex;
         margin: auto;
+        font-size: 15px;
+        top: 50%;
+        left: 43%;
+        position: absolute;
     }
     .content {
-        flex-grow: 1;
         width: 100%;
         height: 100vh; 
         background: skyblue;

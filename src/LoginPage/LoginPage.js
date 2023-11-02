@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './LoginPage.module.css';
+import { Link } from 'react-router-dom';
 
     function Content() {
 
@@ -13,8 +14,10 @@ import style from './LoginPage.module.css';
     function Kakao() {
 
         return (
-            <div className={style.kakao}>
-                <h5>Login with kakao</h5>
+            <div>
+                <Link to={'/KakaoLogin'}>
+                    <p className={style.kakao}>Login with kakao</p>
+                </Link>
             </div>
         )
     }
@@ -23,7 +26,7 @@ import style from './LoginPage.module.css';
         return(
             <>
                 <div className={style.login}>
-                    <h3>Sign in to 부르즈할리파</h3>
+                    <h3>Sign in to 두유타운</h3>
                     <Kakao/>
                 </div>
             </>
@@ -31,7 +34,6 @@ import style from './LoginPage.module.css';
     }
 
     function LoginPage(props) {
-
         return (
             <div className={style.container}>
                 <Content/>

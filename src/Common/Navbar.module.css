@@ -1,0 +1,21 @@
+.left{
+    position: absolute;
+    left: 1%;
+    bottom: -9%;
+    color: white;
+}
+.right{
+    position: absolute;
+    right: 1%;
+    bottom: -8%;
+    color: white;
+    text-align: right;
+}
+.back{
+    background-color: #5595FF;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: -1.9%;
+    height: 95px;
+}
