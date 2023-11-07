@@ -5,6 +5,7 @@ import Layout from './Layout/Layout';
 import LoginPage from './LoginPage/LoginPage';
 import KakaoLogin from './LoginPage/KakaoLogin';
 import MainPage from './MainPage/MainPage';
+import MainPage2 from './MainPage/MainPage2';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
                   <Route path='/KakaoLogin' element={<KakaoLogin/>}/>
                   <Route path="/" element={<Layout/>}>
                     <Route index element={<MainPage/>}/>
+                    <Route path='/MainPage2' element={<MainPage2/>}/>
                   </Route>
                 </Routes>
             </AnimatePresence>
