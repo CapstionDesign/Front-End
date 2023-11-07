@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './KakaoLogin.module.css';
+import { Link } from 'react-router-dom';
 
 function Content() {
 
@@ -29,7 +30,9 @@ function Box(){
             <label className={style.loginment}>로그인 상태 유지</label>
             <label className={style.findment}>아이디/비밀번호찾기</label>
             <br></br><br></br>
-            <span className={style.loginbtn}>로그인</span>
+            <Link to={'/MainPage2'}>
+                <span className={style.loginbtn}>로그인</span>
+            </Link>
             <span className={style.kakaobtn}>카카오 계정으로 로그인</span>
         </div>
     )
