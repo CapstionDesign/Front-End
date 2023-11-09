@@ -1,16 +1,16 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../Common/Header';
+import Header1 from '../Common/Header1';
 import Navbar from '../Common/Navbar';
 
-function Layout() {
+function Layout1() {
 
     return (
         <div>
-            <Header/>
+            <Header1/>
             <Navbar/>
             <Outlet/>
         </div>
     );
 }
 
-export default Layout;
+export default Layout1;

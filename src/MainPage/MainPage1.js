@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './MainPage.module.css';
+import style from './MainPage1.module.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-function MainPage() {
+function MainPage1() {
     return(
         <div className={style.container}>
             <div className={style.main}>
@@ -86,4 +86,4 @@ function Main5(){
     );
 }
 
-export default MainPage;
+export default MainPage1;
