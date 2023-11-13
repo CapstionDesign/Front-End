@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './MyPage.module.css';
+import style from './School.module.css';
 import { Link } from 'react-router-dom';
 
 function Content() {
@@ -11,7 +11,7 @@ function Content() {
     );
 }
 
-function MyPage(props) {
+function School(props) {
     return (
         <div className={style.container}>
             <Content/>
@@ -22,7 +22,7 @@ function MyPage(props) {
 function Box(){
     return (
         <div className={style.box}>
-            <label className={style.label}><a className={style.my}>마이페이지</a>
+            <label className={style.label}><a className={style.my}>학교 인증하기</a>
                 <a className={style.xbtn}>
                     <Link className={style.x} to={'/MainPage1'}>X</Link>
                 </a>
@@ -31,4 +31,4 @@ function Box(){
     )
 }
 
-export default MyPage;
+export default School;

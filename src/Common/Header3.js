@@ -1,5 +1,4 @@
 import style from './Header2.module.css';
-import { Link } from  'react-router-dom';
 
 function Ment(){
     return (
@@ -14,29 +13,9 @@ function Header() {
         <div>
             <p className={style.back}>
                 <Ment/>
-                <Login/>
-                <Signup/>
             </p>
         </div>
     );
-}
-
-function Login(){
-    return (
-        <div>
-            <Link to={'/LoginPage'}>
-                <p className={style.Login}>로그아웃</p>
-            </Link>
-        </div>
-    )
-}
-
-function Signup(){
-    return (
-        <div>
-            <p className={style.Signup}>회원가입</p>
-        </div>
-    )
 }
 
 export default Header;

@@ -10,6 +10,10 @@ import MainPage1 from './MainPage/MainPage1';
 import MainPage2 from './MainPage/MainPage2';
 import BeforeEmail from './MyPage/BeforeEmail';
 import MyPage from './Component/MyPage';
+import School from './Component/School';
+import Email1 from './MyPage/Email1';
+import Email2 from './MyPage/Email2';
+import Email3 from './MyPage/Email3';
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
                   <Route path="/" element={<Layout3/>}>
                     <Route path='/BeforeEmail' element={<BeforeEmail/>}/>
                     <Route path='/MyPage' element={<MyPage/>}/>
+                    <Route path='/School' element={<School/>}/>
+                    <Route path='/Email1' element={<Email1/>}/>
+                    <Route path='/Email2' element={<Email2/>}/>
+                    <Route path='/Email3' element={<Email3/>}/>
                   </Route>
                 </Routes>
             </AnimatePresence>
