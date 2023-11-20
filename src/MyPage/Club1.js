@@ -1,9 +1,9 @@
 import React from 'react';
 import MyPage from '../Component/MyPage';
-import style from './Email3.module.css';
+import style from './Club1.module.css';
 import { Link } from 'react-router-dom';
 
-function BeforeEmail(props) {
+function Club1(props) {
     return (
         <div className={style.BeforeEmail}>
             <MyPage/>
@@ -32,11 +32,9 @@ function Content() {
                 ))}
             </ul>
             </p>
-            <Link to={'/Club1'}><p className={style.school3}>동아리 개설 신청</p></Link>
-            <p className={style.school4}>동아리 참가 신청</p>
             <p className={style.delete}>회원 탈퇴하기</p>
         </div>
     );
 }
 
-export default BeforeEmail;
+export default Club1;
