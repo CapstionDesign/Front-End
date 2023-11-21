@@ -35,6 +35,7 @@ function Content() {
             <p className={style.school3}>동아리 개설 신청</p>
             <p className={style.school4}>동아리 참가 신청</p>
             <p className={style.delete}>회원 탈퇴하기</p>
+            <Link to={'/PhaserGame'}><p className={style.button}>코드 확인</p></Link>
         </div>
     );
 }

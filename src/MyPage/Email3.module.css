@@ -125,3 +125,17 @@
     margin-left: 10px; /* 왼쪽 여백 제거 */
     text-align: left;
 }
+.button{
+    position: absolute;
+    display: flex;
+    width: 7%;
+    top: 300px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #4682B4;
+    border-radius: 2%;
+    padding: 0.5%;
+    color: white;
+    left: 46%;
+}
