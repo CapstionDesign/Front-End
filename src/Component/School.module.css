@@ -18,7 +18,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5);
 }
 .my{
     margin-left: 7px;
