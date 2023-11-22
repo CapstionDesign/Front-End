@@ -12,7 +12,6 @@ body{
     border-radius: 10px;
     align-items: center;
     justify-content: center;
-    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5);
 }
 .content {
     flex-grow: 1;
