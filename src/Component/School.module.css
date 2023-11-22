@@ -25,6 +25,7 @@ body{
 }
 .x{
     text-decoration: none;
+    margin-left: 90px;
 }
 .xbtn{
     color: black;
@@ -50,4 +51,5 @@ body{
     padding-top: 1%;
     padding-bottom: 1%;
     font-size: 15px;
+    display: flex;
 }

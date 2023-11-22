@@ -15,6 +15,8 @@ import Email1 from './MyPage/Email1';
 import Email2 from './MyPage/Email2';
 import Email3 from './MyPage/Email3';
 import PhaserGame from './World/PhaserGame';
+import Club1 from './MyPage/Club1';
+import Manage1 from './ManagePage/Manage1';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
                     <Route path='/Email1' element={<Email1/>}/>
                     <Route path='/Email2' element={<Email2/>}/>
                     <Route path='/Email3' element={<Email3/>}/>
+                    <Route path='/Club1' element={<Club1/>}/>
+                    <Route path='/Manage1' element={<Manage1/>}/>
                   </Route>
                   <Route path="/PhaserGame" element={<PhaserGame />} />
                 </Routes>
