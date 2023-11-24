@@ -5,13 +5,15 @@ const PhaserGame = () => {
   useEffect(() => {
     const config = {
         type: Phaser.AUTO,
-        width: 2000,
-        height: 2000,
+        scale: {
+          mode: Phaser.Scale.FIT,
+          parent: 'phaser-game-container',
+          autoCenter: Phaser.Scale.CENTER_BOTH,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        },
         physics: {
-            default: 'arcade',
-            arcade: {
-            debug: false,
-            },
+          default: 'arcade'
         },
         scene: {
             preload: preload,
@@ -60,15 +62,15 @@ const PhaserGame = () => {
         // const library = map.createLayer("Library", tiles4)
         // const hall = map.createLayer("100th Anniversary Memorial Hall", tiles5)
 
-        // // 플레이어 생성
-        const player = this.physics.add.sprite(140, 450, 'human').setName("player");
+        // 플레이어 생성
+        const player = this.physics.add.sprite(200, 200, 'human').setName("player");
+        
+        // 카메라 경계 설정
+        this.cameras.main.setBounds(0, 0, 4800, 4800);
+        this.cameras.main.startFollow(player);
 
         // 게임 크기 설정
-        const gameWidth = this.game.config.width;
-        const gameHeight = this.game.config.height;
-        this.physics.world.setBounds(0, 0, gameWidth, gameHeight);
-        this.cameras.main.setBounds(0, 0, 500, 500);
-        this.cameras.main.startFollow(player, true, 0.1, 0.1);
+        this.physics.world.setBounds(0, 0, window.innerWidth, window.innerHeight);
 
         // 플레이어와 맵 간 충돌 설정
         // this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -140,6 +142,9 @@ const PhaserGame = () => {
     
           player.anims.play("turn");
         }
+
+        // console.log(this.cameras.main.worldView); // 카메라의 세계 좌표
+        // console.log(player.x, player.y); // 플레이어의 좌표
       }
     
 
