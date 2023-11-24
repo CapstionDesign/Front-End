@@ -1,0 +1,61 @@
+.left{
+    position: absolute;
+    left: 1%;
+    bottom: -9%;
+    color: white;
+}
+.right{
+    position: absolute;
+    right: 1%;
+    bottom: -8%;
+    color: white;
+    text-align: right;
+}
+.back{
+    background-color: #5595FF;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: -1.9%;
+    height: 95px;
+}
+.toggleList1{
+    background-color: #5595FF;
+    width: 15%;
+    padding: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+    margin-left: 25px;
+    color: white;
+}
+a {
+    color: inherit; /* 상위 요소의 색상을 상속받음 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+li {
+    list-style: none; /* 리스트 마커(기본 여백) 제거 */
+    padding-left: 0; /* 왼쪽 여백 제거 */
+    margin-left: -1243px;
+    text-align: center;
+}
+button{
+    border: none;
+    font: inherit;
+    background-color: inherit;
+}
+.li1{
+    font-size: 20px;
+}
+.boldText1{
+    font-weight: bold;
+}
+.boldText2{
+    font-weight: bold;
+}
+.boldText3{
+    font-weight: bold;
+}
+.boldText4{
+    font-weight: bold;
+}

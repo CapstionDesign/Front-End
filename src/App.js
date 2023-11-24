@@ -15,6 +15,7 @@ import Email1 from './MyPage/Email1';
 import Email2 from './MyPage/Email2';
 import Email3 from './MyPage/Email3';
 import Club1 from './MyPage/Club1';
+import Manage from './Component/Manage';
 import Manage1 from './ManagePage/Manage1';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                     <Route path='/BeforeEmail' element={<BeforeEmail/>}/>
                     <Route path='/MyPage' element={<MyPage/>}/>
                     <Route path='/School' element={<School/>}/>
+                    <Route path='/Manage' element={<Manage/>}/>
                     <Route path='/Email1' element={<Email1/>}/>
                     <Route path='/Email2' element={<Email2/>}/>
                     <Route path='/Email3' element={<Email3/>}/>
