@@ -6,8 +6,7 @@ const PhaserGame = () => {
     const config = {
         type: Phaser.AUTO,
         scale: {
-          mode: Phaser.Scale.FIT,
-          parent: 'phaser-game-container',
+          mode: Phaser.Scale.RESIZE,
           autoCenter: Phaser.Scale.CENTER_BOTH,
           width: window.innerWidth,
           height: window.innerHeight,
@@ -28,6 +27,10 @@ const PhaserGame = () => {
         // 배경 이미지
         this.load.image("mainWorld", "img/MainWorld.png");
 
+        // 건물 이미지
+        // this.load.image("library", "img/school_library.png");
+        // this.load.image("memorialHall", "img/school_memorial_hall.png");
+
         // // tiled map 불러오기
         // this.load.tilemapTiledJSON('map', 'assets/maps/MainWorld.json');
         
@@ -39,16 +42,16 @@ const PhaserGame = () => {
         // this.load.image('memorialHall', 'assets/images/school_memorial_hall.png');
         
         // 캐릭터 이미지
-        this.load.spritesheet("human", "img/human.png", {
-        frameWidth: 102.1,
-        frameHeight: 101.75,
-        });
+        this.load.spritesheet("man", "img/Character.png", {
+          frameWidth: 32,
+          frameHeight: 32
+        })
     }
 
     function create() {
         // 배경 화면
         this.add.image(0, 0, "mainWorld").setOrigin(0, 0);
-    
+
         // 맵 로드
         // const map = this.make.tilemap({ key: "MainWorld" });
         // const tiles1 = map.addTilesetImage("school_fountain", "fountain");
@@ -61,25 +64,26 @@ const PhaserGame = () => {
         // const world = map.createLayer("World", [tiles1, tiles2, tiles3]);
         // const library = map.createLayer("Library", tiles4)
         // const hall = map.createLayer("100th Anniversary Memorial Hall", tiles5)
+        const worldWidth = 4800;
+        const worldHeight = 4800;
 
         // 플레이어 생성
-        const player = this.physics.add.sprite(200, 200, 'human').setName("player");
+        const player = this.physics.add.sprite(2065, worldHeight - 1800, 'man').setName("player");
         
         // 카메라 경계 설정
-        this.cameras.main.setBounds(0, 0, 4800, 4800);
+        this.cameras.main.setBounds(0, 0, worldWidth, worldHeight);
         this.cameras.main.startFollow(player);
 
         // 게임 크기 설정
-        this.physics.world.setBounds(0, 0, window.innerWidth, window.innerHeight);
+        this.physics.world.setBounds(0, 0, worldWidth, worldHeight);
 
         // 플레이어와 맵 간 충돌 설정
-        // this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-        // this.physics.add.collider(player, [library, hall]);
-
+        player.setCollideWorldBounds(true);
+        
         // 아래쪽으로 움직이는 컷
         this.anims.create({
         key: 'down',
-        frames: this.anims.generateFrameNumbers('human', { start: 0, end: 5 }),
+        frames: this.anims.generateFrameNumbers('man', { start: 0, end: 2 }),
         frameRate: 10,
         repeat: -1 
         });    
@@ -87,7 +91,7 @@ const PhaserGame = () => {
         // 왼쪽으로 움직이는 컷
         this.anims.create({
         key: 'left',
-        frames: this.anims.generateFrameNumbers('human', { start: 6, end: 11 }),
+        frames: this.anims.generateFrameNumbers('man', { start: 12, end: 14 }),
         frameRate: 10,
         repeat: -1 
         });
@@ -95,7 +99,7 @@ const PhaserGame = () => {
         // 오른쪽으로 움직이는 컷
         this.anims.create({
         key: 'right',
-        frames: this.anims.generateFrameNumbers('human', { start: 12, end: 17 }),
+        frames: this.anims.generateFrameNumbers('man', { start: 24, end: 26 }),
         frameRate: 10,
         repeat: -1
         });
@@ -103,14 +107,14 @@ const PhaserGame = () => {
         // 위쪽으로 움직이는 컷
         this.anims.create({
         key: 'up',
-        frames: this.anims.generateFrameNumbers('human', { start: 18, end: 23 }),
+        frames: this.anims.generateFrameNumbers('man', { start: 36, end: 38 }),
         frameRate: 10,
         repeat: -1
         });
 
         this.anims.create({
         key: 'turn',
-        frames: [ { key: 'human', frame: 4 } ],
+        frames: [ { key: 'man', frame: 1 } ],
         frameRate: 20
         });
     }
@@ -142,9 +146,6 @@ const PhaserGame = () => {
     
           player.anims.play("turn");
         }
-
-        // console.log(this.cameras.main.worldView); // 카메라의 세계 좌표
-        // console.log(player.x, player.y); // 플레이어의 좌표
       }
     
 
