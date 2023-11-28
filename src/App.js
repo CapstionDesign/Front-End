@@ -16,8 +16,10 @@ import Email2 from './MyPage/Email2';
 import Email3 from './MyPage/Email3';
 import PhaserGame from './World/PhaserGame';
 import Club1 from './MyPage/Club1';
-import Manage from './Component/Manage';
-import Manage1 from './ManagePage/Manage1';
+import Manage1 from './Component/Manage1';
+import Manage2 from './Component/Manage2';
+import ManagePage1 from './ManagePage/ManagePage1';
+import ManagePage2 from './ManagePage/ManagePage2';
 
 function App() {
   return (
@@ -37,12 +39,14 @@ function App() {
                     <Route path='/BeforeEmail' element={<BeforeEmail/>}/>
                     <Route path='/MyPage' element={<MyPage/>}/>
                     <Route path='/School' element={<School/>}/>
-                    <Route path='/Manage' element={<Manage/>}/>
+                    <Route path='/Manage1' element={<Manage1/>}/>
+                    <Route path='/Manage2' element={<Manage2/>}/>
                     <Route path='/Email1' element={<Email1/>}/>
                     <Route path='/Email2' element={<Email2/>}/>
                     <Route path='/Email3' element={<Email3/>}/>
                     <Route path='/Club1' element={<Club1/>}/>
-                    <Route path='/Manage1' element={<Manage1/>}/>
+                    <Route path='/ManagePage1' element={<ManagePage1/>}/>
+                    <Route path='/ManagePage2' element={<ManagePage2/>}/>
                   </Route>
                   <Route path="/PhaserGame" element={<PhaserGame />} />
                 </Routes>
