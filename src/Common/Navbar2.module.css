@@ -62,9 +62,9 @@ button{
 }
 .navbar{
     border-right: 1px solid black;
-    display: block;
-    flex-grow: 1;
     height: 69%;
     width: 20%;
-    position: absolute;
+    margin-top: 5px;
+    margin-right: 1160px;
+    z-index: 1;
 }
