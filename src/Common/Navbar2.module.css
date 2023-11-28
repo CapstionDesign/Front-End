@@ -21,7 +21,7 @@
 }
 .toggleList1{
     background-color: #5595FF;
-    width: 15%;
+    width: 80%;
     padding: 5px;
     margin-bottom: 20px;
     text-align: center;
@@ -36,7 +36,8 @@ a {
 li {
     list-style: none; /* 리스트 마커(기본 여백) 제거 */
     padding-left: 0; /* 왼쪽 여백 제거 */
-    margin-left: -1243px;
+    margin-left: -50px;
+    margin-top: -1px;
     text-align: center;
 }
 button{
@@ -58,4 +59,12 @@ button{
 }
 .boldText4{
     font-weight: bold;
+}
+.navbar{
+    border-right: 1px solid black;
+    display: block;
+    flex-grow: 1;
+    height: 69%;
+    width: 20%;
+    position: absolute;
 }

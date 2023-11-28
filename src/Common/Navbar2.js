@@ -56,7 +56,7 @@ function Navbar1() {
     };
 
     return (
-        <nav>
+        <nav className={style.navbar}>
             <button className={style.toggleList1} onClick={toggleList1}>동아리 개설 관리 {isListVisible1 ? '▼' : '►'} </button>
             {isListVisible1 && (
                 <ul>
