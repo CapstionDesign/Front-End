@@ -5,6 +5,7 @@ import Layout1 from './Layout/Layout1';
 import Layout2 from './Layout/Layout2';
 import Layout3 from './Layout/Layout3';
 import LoginPage from './LoginPage/LoginPage';
+import Login from './LoginPage/Login';
 import KakaoLogin from './LoginPage/KakaoLogin';
 import MainPage1 from './MainPage/MainPage1';
 import MainPage2 from './MainPage/MainPage2';
@@ -26,6 +27,7 @@ function App() {
     <BrowserRouter>
             <AnimatePresence>
                 <Routes>
+                  <Route path='/Login' element={<Login/>}/>
                   <Route path='/LoginPage' element={<LoginPage/>}/>
                   <Route path='/KakaoLogin' element={<KakaoLogin/>}/>
                   <Route path="/" element={<Layout1/>}>

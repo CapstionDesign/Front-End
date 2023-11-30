@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import style from './LoginPage.module.css';
 import { Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
+import { Dialog } from '@headlessui/react';
 
     function Content() {
 
