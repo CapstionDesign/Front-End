@@ -30,9 +30,8 @@ function Box(){
     }, []);
 
     return (
-        <div className={style.box}>
-            <Modal.Dialog show={showModal} onHide={handleCloseModal}>
-                <label className={style.label}>Kakao 계정으로 로그인</label>
+        <>
+            <Modal.Dialog show={showModal} onHide={handleCloseModal} className={style.box}>
                 <h2><br></br>로그인</h2>
                 <input className={style.email} type="text" name="email" placeholder='이메일'/>
                 <input className={style.password} type="password" name="password" placeholder='패스워드'/>
@@ -43,9 +42,8 @@ function Box(){
                 <Link to={'/BeforeEmail'}>
                     <span className={style.loginbtn}>로그인</span>
                 </Link><br></br>
-                <span className={style.kakaobtn}>카카오 계정으로 로그인</span>
             </Modal.Dialog>
-        </div>
+        </>
     )
 }
 

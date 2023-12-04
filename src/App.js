@@ -21,6 +21,8 @@ import Manage1 from './Component/Manage1';
 import Manage2 from './Component/Manage2';
 import ManagePage1 from './ManagePage/ManagePage1';
 import ManagePage2 from './ManagePage/ManagePage2';
+import PresidentPage1 from './President/PresidentPage1';
+import President from './Component/President';
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
                     <Route path='/Club1' element={<Club1/>}/>
                     <Route path='/ManagePage1' element={<ManagePage1/>}/>
                     <Route path='/ManagePage2' element={<ManagePage2/>}/>
+                    <Route path='/PresidentPage1' element={<PresidentPage1/>}/>
+                    <Route path='/President' element={<President/>}/>
                   </Route>
                   <Route path="/PhaserGame" element={<PhaserGame />} />
                 </Routes>
