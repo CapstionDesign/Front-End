@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 
 function LoginFormModal() {
-  
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,44 +28,38 @@ function LoginFormModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        로그인
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>로그인</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicUsername">
-              <Form.Label>아이디</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="아이디를 입력하세요"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>비밀번호</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="비밀번호를 입력하세요"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              로그인
-            </Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
+      <Modal.Header closeButton>
+                    <Modal.Title>로그인</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group controlId="formBasicUsername">
+                        <Form.Label>아이디</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="아이디를 입력하세요"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                        />
+                        </Form.Group>
+                        <br></br>
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>비밀번호</Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="비밀번호를 입력하세요"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <br></br>
+                        <Button variant="primary" type="submit">
+                        로그인
+                        </Button>
+                    </Form>
+                </Modal.Body>
     </>
   );
 }
