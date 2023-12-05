@@ -13,14 +13,12 @@
     top: -2%;
     height: 95px;
     z-index: 1;
+    border: none;
 }
 .Login{
     position: absolute;
     right: 10%;
     top: 35%;
-    border-radius: 40%;
-    background-color: white;
-    border: 1px solid black;
     width: 80px;
     height: 40px;
     text-align: center;
@@ -28,15 +26,11 @@
     align-items: center;
     flex-direction: column;
     display: flex;
-    color: black;
 }
 .Signup{
     position: absolute;
     right: 3%;
-    top: 10%;
-    border-radius: 40%;
-    background-color: white;
-    border: 1px solid black;
+    top: 35%;
     width: 80px;
     height: 40px;
     text-align: center;
@@ -44,5 +38,7 @@
     align-items: center;
     flex-direction: column;
     display: flex;
-    color: black;
+}
+.modal {
+    border: none;
 }

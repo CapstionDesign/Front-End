@@ -3,7 +3,7 @@ import style from './Header2.module.css';
 function Ment(){
     return (
         <div>
-            <p className={style.Header}>Do U Town</p>
+            <p className={style.Header}>DO U TOWN</p>
         </div>
     );
 }
