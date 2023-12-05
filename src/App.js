@@ -15,7 +15,7 @@ import School from './Component/School';
 import Email1 from './MyPage/Email1';
 import Email2 from './MyPage/Email2';
 import Email3 from './MyPage/Email3';
-import PhaserGame from './World/PhaserGame';
+import GameStart from "./World/GameStart";
 import Club1 from './MyPage/Club1';
 import Manage1 from './Component/Manage1';
 import Manage2 from './Component/Manage2';
@@ -54,7 +54,7 @@ function App() {
                     <Route path='/PresidentPage1' element={<PresidentPage1/>}/>
                     <Route path='/President' element={<President/>}/>
                   </Route>
-                  <Route path="/PhaserGame" element={<PhaserGame />} />
+                  <Route path="/GameStart" element={<GameStart />} />
                 </Routes>
             </AnimatePresence>
         </BrowserRouter>
