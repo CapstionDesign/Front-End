@@ -33,8 +33,11 @@ export default class MainWorld extends Phaser.Scene {
         const worldHeight = 3200;
         this.physics.world.setBounds(0, 0, worldWidth, worldHeight);
 
+        // 이전에 설정한 registry에서 플레이어 데이터 가져오기
+        const playerData = this.registry.get('playerData');
+
         // 플레이어 생성
-        const player = this.physics.add.sprite(2065, 3000, 'human').setName("player");
+        const player = this.physics.add.sprite(playerData.x, playerData.y, 'human').setName('player');
 
         // 카메라 경계 설정
         this.cameras.main.setBounds(0, 0, worldWidth, worldHeight);
@@ -68,7 +71,13 @@ export default class MainWorld extends Phaser.Scene {
         unionPortal.setCollideWorldBounds(true);
 
         // 포탈과 플레이어 간 충돌 설정
-        this.physics.add.collider(player, unionPortal, this.enterInterior, null, this);
+        this.physics.add.collider(player, unionPortal, () => {
+            // 초기 좌표를 고정
+            this.registry.set('playerData', { x: 1680, y: 2150 });
+
+            // 새로운 맵으로 전환
+            this.scene.start("Union1F");
+        }, null, this);
 
         // 오른쪽으로 움직이는 컷
         this.anims.create({
@@ -101,7 +110,6 @@ export default class MainWorld extends Phaser.Scene {
             frameRate: 10,
             repeat: -1
         });
-
 
         this.anims.create({
             key: 'turn',
@@ -137,7 +145,6 @@ export default class MainWorld extends Phaser.Scene {
 
             player.anims.play("turn");
         }
-        console.log(player.x, player.y);
     }
 
     // 플레이어와 건물 간의 충돌 처리 함수
@@ -148,13 +155,4 @@ export default class MainWorld extends Phaser.Scene {
         buildings.setVelocityX(0);
         buildings.setVelocityY(0);
     }
-
-    // 포탈에 닿았을 때 실행되는 함수
-    enterInterior() {
-      // 여기에서 건물 내부로 이동하는 동작을 수행합니다.
-
-      // 새로운 맵으로 전환
-      this.scene.start("Union1F");
-    }
-
 }
