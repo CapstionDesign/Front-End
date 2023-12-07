@@ -3,6 +3,7 @@ import MyPage from '../Component/MyPage';
 import style from './BeforeEmail.module.css';
 import { Link } from 'react-router-dom';
 import { Button, Modal, Form } from 'react-bootstrap';
+import Email1 from '../MyPage/Email1';
 
 function BeforeEmail() {
     return (
@@ -15,16 +16,27 @@ function BeforeEmail() {
 
 function Content() {
 
+    const [modalShow, setModalShow] = useState(false);
+
+    const handleButtonClick = () => {
+        setModalShow(true);
+    };
+
+    const handleModalClose = () => {
+        setModalShow(false);
+    };
+
     return (
         <div className={style.content}>
             <Modal.Body>
-            <p className={style.school1}>학교 인증 필요</p>
-            <p className={style.school2}>학교 인증이 완료되지 않았습니다.</p>
-            <Link to={'/Email1'}>
-                <p className={style.school3}>인증하러 가기</p>
-            </Link>
-            <p className={style.delete}>회원 탈퇴하기</p>
+                <Button onClick={handleButtonClick} className={style.school3}>
+                        학교인증하기
+                </Button>
+                <p className={style.delete}>회원 탈퇴하기</p>
             </Modal.Body>
+            <Modal show={modalShow} onHide={handleModalClose}>
+                <Email1/>
+            </Modal>
         </div>
     );
 }
