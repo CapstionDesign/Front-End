@@ -7,11 +7,7 @@ function LoginFormModal() {
     const [formData, setFormData] = useState({
         memberId: '',
         memberPass: '',
-        memberName: '',
-        memberGrade: '',
-        studentStatus: '',
-        registDate: '',
-        memberNo: '',
+        memberName: ''
       });
     
       const handleChange = (e) => {
@@ -22,6 +18,21 @@ function LoginFormModal() {
         });
       };
     
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:8080/api/v1/members',{
+          method:"POST",
+          body: JSON.stringify(formData),
+          headers:{'Content-Type':'application/json'}
+        })
+        .then(response=>response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(err => console.log(err))
+      }
+
+      /*
       const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -40,6 +51,7 @@ function LoginFormModal() {
           console.error('POST 요청 실패:', error);
         }
       };
+      */
 
     return (
         <>
