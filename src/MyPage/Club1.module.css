@@ -51,33 +51,6 @@
     color: rgba(0, 0, 0, 0.637);
     border: none;
 }
-.school3{
-    position: absolute;
-    display: flex;
-    width: 8%;
-    background-color: #b5b5b5;
-    color: #1d1d1d;
-    font-size: 12px;
-    right: 38%;
-    top: -13px;
-    padding: 0.3%;
-    text-align: center;
-    justify-content: center;
-}
-.school4{
-    position: absolute;
-    display: flex;
-    width: 8%;
-    background-color: #b5b5b5;
-    color: #1d1d1d;
-    font-size: 12px;
-    right: 38%;
-    top: 15px;
-    padding: 0.3%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
 .school5{
     position: absolute;
     display: flex;

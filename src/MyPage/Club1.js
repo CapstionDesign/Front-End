@@ -3,7 +3,7 @@ import MyPage from '../Component/MyPage';
 import style from './Club1.module.css';
 import { Link } from 'react-router-dom';
 
-function Club1(props) {
+function Club1() {
     
     return (
         <div className={style.BeforeEmail}>
@@ -13,7 +13,7 @@ function Club1(props) {
     );
 }
 
-function Content(props) {
+function Content() {
 
     const [clubFile, setClubFile] = useState(null);
     const [clubName, setClubName] = useState('');

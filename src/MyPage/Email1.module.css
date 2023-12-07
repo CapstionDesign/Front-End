@@ -1,11 +1,9 @@
-.content{
+.content2{
     color: black;
     position: absolute;
-    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
     width: 100%;
     top: 25%;
 }
@@ -21,8 +19,6 @@
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    width: 100%;
-    height: 100vh;
 }
 .name{
     position: absolute;
@@ -39,56 +35,46 @@
     position: absolute;
     display: flex;
     flex-grow: 1;
-    width: 25%;
-    top: 150px;
+    top: 100px;
     color: rgba(0, 0, 0, 0.637);
     font-size: 13px;
     text-align: center;
     align-items: center;
     justify-content: center;
+    margin-left: 50px;
 }
 .school2{
     position: absolute;
     display: flex;
-    margin-left: 3px;
-    width: 13%;
     top: 205px;
-    background-color: #d9d9d9;
     padding: 0.5%;
     color: rgba(0, 0, 0, 0.637);
+    margin-left: 80px;
 }
 .school3{
     position: absolute;
     display: flex;
-    margin-left: 3px;
-    width: 13%;
     top: 250px;
-    background-color: #d9d9d9;
     padding: 0.5%;
     color: rgba(0, 0, 0, 0.637);
+    margin-left: 80px;
 }
 .school4{
     position: absolute;
     display: flex;
-    margin-left: 3px;
-    width: 16%;
     top: 295px;
-    background-color: #d9d9d9;
     padding: 0.5%;
     color: rgba(0, 0, 0, 0.637);
+    margin-left: 80px;
 }
 .button{
     position: absolute;
     display: flex;
-    width: 7%;
-    top: 350px;
+    top: 370px;
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: #4682B4;
-    padding: 0.5%;
-    color: white;
-    left: 46%;
+    left: 42%;
 }
 .input{
     border: none;
