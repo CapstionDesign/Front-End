@@ -1,0 +1,33 @@
+.content{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    top: 190px;
+}
+.BeforeEmail{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    height: 90vh;
+}
+.school3{
+    position: absolute;
+    display: flex;
+    right: 192px;
+    top: 145px;
+    text-align: center;
+}
+.delete{
+    position: absolute;
+    display: flex;
+    top: 375px;
+    margin-left: 190px;
+}

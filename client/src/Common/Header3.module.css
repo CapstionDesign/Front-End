@@ -1,0 +1,48 @@
+.Header{
+    position: absolute;
+    left: 1%;
+    margin-top: -0.4%;
+    color: white;
+    font-size: 80px;
+}
+.back{
+    background-color: #5595FF;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: -2%;
+    height: 95px;
+    z-index: 1;
+}
+.Login{
+    position: absolute;
+    right: 10%;
+    top: 35%;
+    border-radius: 40%;
+    background-color: white;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    color: black;
+}
+.Signup{
+    position: absolute;
+    right: 3%;
+    top: 10%;
+    border-radius: 40%;
+    background-color: white;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    color: black;
+}

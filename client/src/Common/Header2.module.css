@@ -1,0 +1,328 @@
+.Header{
+    position: absolute;
+    left: 1%;
+    margin-top: -0.4%;
+    color: white;
+    font-size: 80px;
+}
+.back{
+    background-color: #5595FF;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: -2%;
+    height: 95px;
+    z-index: 1;
+    border: none;
+}
+.Login{
+    position: absolute;
+    right: 10%;
+    top: 35%;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+.Signup{
+    position: absolute;
+    right: 3%;
+    top: 35%;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+.modal {
+    border: none;
+}
+.content{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    top: 190px;
+}
+.BeforeEmail{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    height: 90vh;
+}
+.school{
+    position: absolute;
+    display: flex;
+    margin-left: 175px;
+    top: 145px;
+    text-align: center;
+}
+.delete{
+    position: absolute;
+    display: flex;
+    top: 435px;
+    margin-left: 170px;
+}
+.content2{
+    color: black;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 25%;
+}
+.school1{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    top: 100px;
+    color: rgba(0, 0, 0, 0.637);
+    font-size: 13px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+}
+.school2{
+    position: absolute;
+    display: flex;
+    top: 205px;
+    padding: 0.5%;
+    color: rgba(0, 0, 0, 0.637);
+    margin-left: 93px;
+}
+.school3{
+    position: absolute;
+    display: flex;
+    top: 250px;
+    padding: 0.5%;
+    color: rgba(0, 0, 0, 0.637);
+    margin-left: 93px;
+}
+.school4{
+    position: absolute;
+    display: flex;
+    top: 295px;
+    padding: 0.5%;
+    color: rgba(0, 0, 0, 0.637);
+    margin-left: 80px;
+}
+.button1{
+    position: absolute;
+    display: flex;
+    top: 370px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    left: 205px;
+}
+.input{
+    border: none;
+    border-bottom: 1px solid #333; /* 밑줄 스타일 및 색상 설정 */
+    outline: none;
+    background: none;
+    margin-left: 10px;
+}
+.school5{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    top: 130px;
+    font-size: 13px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+}
+.school6{
+    position: absolute;
+    display: flex;
+    margin-left: 3px;
+    width: 100%;
+    top: 205px;
+    padding: 0.5%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    left: -10px;
+}
+.school7{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    top: 75px;
+    margin-left: 10px;
+}
+.school8{
+    position: absolute;
+    display: flex;
+    top: 100px;
+    margin-left: 10px;
+}
+.school9{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    top: 150px;
+    margin-left: 10px;
+}
+.school10{
+    position: absolute;
+    display: flex;
+    top: 175px;
+    margin-left: 10px;
+}
+.school11{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    top: 225px;
+    margin-left: 10px;
+}
+.school12{
+    position: absolute;
+    display: flex;
+    margin-left: -67px;
+    height: 400%;
+    width: 60%;
+    top: 240px;
+    padding: 0.5%;
+}
+.school13{
+    position: absolute;
+    display: flex;
+    margin-left: 320px;
+    top: -82px;
+    text-align: center;
+    justify-content: center;
+}
+.school14{
+    position: absolute;
+    display: flex;
+    margin-left: 320px;
+    top: -38px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.custom1{
+    list-style-type: none; /* 불릿 스타일 제거 */
+    padding: 0; /* 목록의 패딩 제거 */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 125px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+.custom2{
+    list-style-type: none; /* 불릿 스타일 제거 */
+    padding: 0; /* 목록의 패딩 제거 */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
+    padding-top: 10px;
+}
+.name{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    width: 20%;
+    top: -70px;
+    margin-left: 110px;
+    font-size: 30px;
+}
+.kakao{
+    width: 20%;
+    top: -90px;
+    position: absolute;
+    left: 20px;
+}
+.school15{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    width: 25%;
+    top: 55px;
+}
+.school16{
+    position: absolute;
+    display: flex;
+    width: 92%;
+    top: 90px;
+    border: none;
+    border: 1px solid black;
+}
+.school17{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    width: 25%;
+    top: 130px;
+}
+.school18{
+    position: absolute;
+    display: flex;
+    width: 92%;
+    height: 350%;
+    top: 165px;
+    border: none;
+    border: 1px solid black;
+}
+.school19{
+    position: absolute;
+    display: flex;
+    flex-grow: 1;
+    width: 25%;
+    top: 290px;
+}
+.school20{
+    position: absolute;
+    display: flex;
+    width: 25%;
+    top: 320px;
+}
+.popup{
+    position: absolute;
+    z-index: 1;
+    width: 72%;
+    height: 500%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 55px;
+    left: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.confirmButton{
+    border: none;
+    padding: 10px;
+    width: 50%;
+    margin-top: 10px;
+}
+.delete2{
+    position: absolute;
+    display: flex;
+    top: 435px;
+    margin-left: 185px;
+}

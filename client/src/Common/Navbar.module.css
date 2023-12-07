@@ -1,0 +1,23 @@
+.left{
+    position: absolute;
+    left: 1%;
+    bottom: -15%;
+    color: white;
+    font-size: 14px;
+}
+.right{
+    position: absolute;
+    right: 1%;
+    bottom: -15%;
+    color: white;
+    text-align: right;
+    font-size: 14px;
+}
+.back{
+    background-color: #5595FF;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: -1.888%;
+    height: 87px;
+}
