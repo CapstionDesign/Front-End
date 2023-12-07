@@ -1,46 +1,47 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import axios from 'axios';
 
 function LoginFormModal() {
 
-    const [username, setUsername] = useState('');
-
-    const handleInputChange = (e) => {
-        setUsername(e.target.value);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-    // 서버에 보낼 데이터
-    const dataToSend = {
-        memberName: username,
-        studentNo: '12345',         // 실제 데이터에 따라 수정
-        studentStatus: 'Active' 
-    };
-
-    // fetch를 사용하여 서버에 POST 요청 보내기
-    fetch('http://localhost:8080/api/v1/members', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dataToSend),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        // 서버 응답에 대한 처리
-        console.log('서버 응답:', data);
-      })
-      .catch(error => {
-        console.error('Fetch error:', error);
+    const [formData, setFormData] = useState({
+        memberGrade: '',
+        memberId: '',
+        memberName: '',
+        memberPass: '',
+        registDate: '',
+        studentDTO: {
+          departmentCode: '',
+          hakNumber: '',
+          studentName: '',
+          studentNo: '',
+        },
+        studentStatus: '',
       });
-    };
+    
+      const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      };
+    
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        try {
+          const response = await axios.post('http://localhost:8080/api/v1/members', formData);
+    
+          if (!response.data.success) {
+            throw new Error('Failed to add member');
+          }
+    
+          // Handle success (if needed)
+        } catch (error) {
+          console.error('Error adding member:', error.message);
+        }
+      };
 
     return (
         <>
@@ -49,9 +50,9 @@ function LoginFormModal() {
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicUsername">
+                    <Form.Group className="mb-3" controlId="memberName">
                         <Form.Label>이름</Form.Label>
-                        <Form.Control type="text" value={username} onChange={handleInputChange} />
+                        <Form.Control type="text" name="memberName" value={formData.memberName} onChange={handleInputChange} />
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         회원가입
