@@ -9,7 +9,7 @@ export default class Union1F extends Phaser.Scene {
     // 배경 화면
     this.load.image('Union1F', 'img/world/StudentUnion.png');
 
-      // 캐릭터 이미지
+    // 캐릭터 이미지
     this.load.spritesheet("human", "assets/character/nancy.png", {
       frameWidth: 32,
       frameHeight: 48
@@ -25,8 +25,11 @@ export default class Union1F extends Phaser.Scene {
     const worldHeight = 2400;
     this.physics.world.setBounds(0, 0, worldWidth, worldHeight);
 
-    // 플레이어 생성
-    const player = this.physics.add.sprite(1680, 2150, 'human').setName("player");
+    // 이전 씬에서 저장한 플레이어 데이터를 가져옴
+    const playerData = this.registry.get('playerData');
+
+    // 플레이어 생성 시 초기 좌표 설정
+    const player = this.physics.add.sprite(playerData.x, playerData.y, 'human').setName("player");
 
     // 투명한 박스 생성 (fillColor, alpha)
     const upperWall = this.add.rectangle(1200, 160, 2080, 1, 0x00ff00, 0);
@@ -54,7 +57,13 @@ export default class Union1F extends Phaser.Scene {
     mainPortal.setCollideWorldBounds(true);
 
     // 포탈과 플레이어 간 충돌 설정
-    this.physics.add.collider(player, mainPortal, this.enterInterior, null, this);
+    this.physics.add.collider(player, mainPortal, () => {
+      // 초기 좌표를 고정
+      this.registry.set('playerData', { x: 3160, y: 2880 });
+
+      // 새로운 맵으로 전환
+      this.scene.start("MainWorld");
+    }, null, this);
 
     // 오른쪽으로 움직이는 컷
     this.anims.create({
@@ -122,17 +131,5 @@ export default class Union1F extends Phaser.Scene {
 
       player.anims.play("turn", true);
     }
-    console.log(player.x, player.y);
   }
-
-  // 포탈에 닿았을 때 실행되는 함수
-  enterInterior(player, unionPortal) {
-    // 여기에서 건물 내부로 이동하는 동작을 수행합니다.
-    // 예를 들어, 새로운 맵으로 전환하고 플레이어의 위치를 설정할 수 있습니다.
-    player.x = 500;
-    player.y = 500;
-    // 새로운 맵으로 전환
-    this.scene.start("MainWorld");
-  }
-
 }
