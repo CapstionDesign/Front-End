@@ -1,46 +1,45 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import axios from 'axios';
 
 function LoginFormModal() {
 
-    const [username, setUsername] = useState('');
-
-    const handleInputChange = (e) => {
-        setUsername(e.target.value);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-    // 서버에 보낼 데이터
-    const dataToSend = {
-        memberName: username,
-        studentNo: '12345',         // 실제 데이터에 따라 수정
-        studentStatus: 'Active' 
-    };
-
-    // fetch를 사용하여 서버에 POST 요청 보내기
-    fetch('http://localhost:8080/api/v1/members', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dataToSend),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        // 서버 응답에 대한 처리
-        console.log('서버 응답:', data);
-      })
-      .catch(error => {
-        console.error('Fetch error:', error);
+    const [formData, setFormData] = useState({
+        memberId: '',
+        memberPass: '',
+        memberName: '',
+        memberGrade: '',
+        studentStatus: '',
+        registDate: '',
+        memberNo: '',
       });
-    };
+    
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+      };
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+          const apiUrl = 'http://localhost:8080/api/v1/members';
+          const jsonData = JSON.stringify(formData);
+    
+          const response = await axios.post(apiUrl, jsonData, {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+    
+          console.log('POST 요청 성공:', response.data);
+        } catch (error) {
+          console.error('POST 요청 실패:', error);
+        }
+      };
 
     return (
         <>
@@ -49,10 +48,25 @@ function LoginFormModal() {
             </Modal.Header>
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicUsername">
+
+                    <Form.Group controlId="formMemberName">
                         <Form.Label>이름</Form.Label>
-                        <Form.Control type="text" value={username} onChange={handleInputChange} />
-                    </Form.Group>
+                        <Form.Control type="text" name="memberName"
+                            value={formData.memberName} onChange={handleChange} />
+                    </Form.Group><br></br>
+
+                    <Form.Group controlId="formMemberId">
+                        <Form.Label>로그인</Form.Label>
+                        <Form.Control type="text" name="memberId"
+                            value={formData.memberId} onChange={handleChange} />
+                    </Form.Group><br></br>
+
+                    <Form.Group controlId="formMemberPass">
+                        <Form.Label>비밀번호</Form.Label>
+                        <Form.Control type="password" name="memberPass"
+                            value={formData.memberPass} onChange={handleChange} />
+                    </Form.Group><br></br>
+
                     <Button variant="primary" type="submit">
                         회원가입
                     </Button>
