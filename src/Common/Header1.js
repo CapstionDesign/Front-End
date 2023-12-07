@@ -2,20 +2,15 @@ import { useState } from 'react';
 import style from './Header1.module.css';
 import { Button, Modal } from 'react-bootstrap';
 import Login from '../LoginPage/Login';
+import Member from '../LoginPage/Member';
 
-function Ment(){
-    return (
-        <div>
-            <p className={style.Header}>DO U TOWN</p>
-        </div>
-    );
-}
-
-function Header() {
+function Header1() {
     return (
         <div>
             <p className={style.back}>
-                <Ment/>
+                <div>
+                    <p className={style.Header}>DO U TOWN</p>
+                </div>
                 <Log/>
                 <Signup/>
             </p>
@@ -25,15 +20,14 @@ function Header() {
 
 function Log(){
 
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const [show1, setShow1] = useState(false);
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
 
     return (
         <>
-            <Button variant="light" onClick={handleShow} className={style.Login}>로그인</Button>
-            <Modal show={show} onHide={handleClose}>
+            <Button variant="light" onClick={handleShow1} className={style.Login}>로그인</Button>
+            <Modal show={show1} onHide={handleClose1}>
                 <Login/>
             </Modal>
         </>
@@ -41,11 +35,20 @@ function Log(){
 }
 
 function Signup(){
+
+    const [show2, setShow2] = useState(false);
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+
+
     return (
         <div>
-            <Button variant="light" className={style.Signup}>회원가입</Button>
+            <Button variant="light" onClick={handleShow2} className={style.Signup}>회원가입</Button>
+            <Modal show={show2} onHide={handleClose2}>
+                <Member/>
+            </Modal>
         </div>
     )
 }
 
-export default Header;
+export default Header1;
