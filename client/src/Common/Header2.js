@@ -10,7 +10,9 @@ function Header2() {
         <div>
             <p className={style.back}>
                 <div>
-                    <p className={style.Header}>DO U TOWN</p>
+                    <img src="/img/suya.png" alt="Image 1" className={style.suya}/>
+                    <p className={style.Header}>Do U Town</p>
+                    <img src="/img/suho.png" alt="Image 1" className={style.suho}/>
                 </div>
                 <div>
                     <Link to={'/MainPage1'}>
