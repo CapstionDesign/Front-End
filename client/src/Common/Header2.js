@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './Header2.module.css';
 import { Link } from  'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
@@ -27,11 +27,30 @@ function Header2() {
 
 function CustomModal(){
 
+    const [currentDate, setCurrentDate] = useState('');
+
+    useEffect(() => {
+        // 현재 날짜 객체 생성
+        const currentDateObj = new Date();
+
+        // 연, 월, 일 정보 가져오기
+        const year = currentDateObj.getFullYear();
+        const month = currentDateObj.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
+        const day = currentDateObj.getDate();
+
+        // 현재 날짜 문자열 생성
+        const formattedDate = `${year}-${month}-${day}`;
+
+        // 현재 날짜 업데이트
+        setCurrentDate(formattedDate);
+    }, []);
+
     const [showModal1, setShowModal1] = useState(false);
     const [showModal2, setShowModal2] = useState(false);
     const [showModal3, setShowModal3] = useState(false);
     const [showModal4, setShowModal4] = useState(false);
     const [showModal5, setShowModal5] = useState(false);
+    const [showModal6, setShowModal6] = useState(false);
 
     const handleModal1Open = () => setShowModal1(true);
 
@@ -55,34 +74,70 @@ function CustomModal(){
         setShowModal5(true); // 두 번째 모달 열기
     };
 
+    const handleModal6Open = () => {
+        setShowModal4(false); // 첫 번째 모달 닫기
+        setShowModal6(true); // 두 번째 모달 열기
+    };
+
     const handleModal1Close = () => setShowModal1(false);
     const handleModal2Close = () => setShowModal2(false);
     const handleModal3Close = () => setShowModal3(false);
     const handleModal4Close = () => setShowModal4(false);
     const handleModal5Close = () => setShowModal5(false);
+    const handleModal6Close = () => setShowModal6(false);
 
     const [clubList, setClubList] = useState([
         { clubName : '맛따라멋따라', clubStatus : '(대기중)'},
         { clubName : '클래시아', clubStatus : '(대기중)'},
-        { clubName : 'GDSC', clubStatus : '(대기중)'},
+        { clubName : '오아시스', clubStatus : '(대기중)'},
     ]);
 
     const [clubFile, setClubFile] = useState(null);
     const [clubName, setClubName] = useState('');
     const [clubInfo, setClubInfo] = useState('');
-    const [isPopupOpen, setPopupOpen] = useState(false);
+    const [isPopupOpen1, setPopupOpen1] = useState(false);
+    const [isPopupOpen2, setPopupOpen2] = useState(false);
 
-    const openPopup = () => {
-        setPopupOpen(true);
+    const openPopup1 = () => {
+        setPopupOpen1(true);
+    };
+    const openPopup2 = () => {
+        setPopupOpen2(true);
     };
 
-    const closePopup = () => {
+    const closePopup1 = () => {
         // 팝업 닫기
-        setPopupOpen(false);
+        setPopupOpen1(false);
+        setShowModal4(true);
+        setShowModal5(false);
+    };
+    const closePopup2 = () => {
+        // 팝업 닫기
+        setPopupOpen2(false);
         setShowModal4(true);
         setShowModal5(false);
     };
 
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedItem1, setSelectedItem1] = useState(null);
+    const [selectedItem2, setSelectedItem2] = useState(null);
+
+    const items = [
+        { id: 1, name: '맛따라멋따라', description: '맛집탐방 동아리' },
+        { id: 2, name: '클래시아', description: '음악밴드 동아리' },
+        { id: 3, name: '오아시스', description: '나눔봉사 동아리' },
+    ];
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+        setSelectedItem1(false);
+    };
+
+    const handleItemClick = (item) => {
+        setSelectedItem1(item.name);
+        setSelectedItem2(item.description);
+        setIsOpen(false);
+    };
 
     return (
         <>
@@ -160,7 +215,7 @@ function CustomModal(){
                                 </ul>
                             </p>
                             <Button onClick={handleModal5Open} className={style.school13}>동아리 개설 신청</Button>
-                            <Button className={style.school14}>동아리 참가 신청</Button>
+                            <Button onClick={handleModal6Open} className={style.school14}>동아리 참가 신청</Button>
                             <Button className={style.delete}>회원 탈퇴하기</Button>
                         </Modal.Body>
                     </div>
@@ -180,20 +235,74 @@ function CustomModal(){
                             <input className={style.school18} type="text" value={clubInfo} onChange={(e) => setClubInfo(e.target.value)}/>
                             <p className={style.school19}>신청 서류 첨부</p>
                             <input className={style.school20} type="file" value={clubFile} onChange={(e) => setClubFile(e.target.value)}/>
-                            <Button className={style.delete2} onClick={openPopup}>
+                            <Button className={style.delete2} onClick={openPopup1}>
                                 신청하기
                             </Button>
 
-                            {isPopupOpen && (
-                                <div className={style.popup}>
+                            {isPopupOpen1 && (
+                                <div className={style.popup1}>
                                     <div>
                                         <p>총 1건에 대해 신청되었습니다.</p>
-                                        <Button className={style.confirmButton} onClick={closePopup}>
+                                        <Button className={style.confirmButton} onClick={closePopup1}>
                                         확인
                                         </Button>
                                     </div>
                                 </div>
                             )}
+                        </Modal.Body>
+                    </div>
+                </div>
+            </Modal>
+
+            <Modal show={showModal6} onHide={handleModal6Close}>
+                <div className={style.BeforeEmail}>
+                    <MyPage/>
+                    <div className={style.content}>
+                        <Modal.Body>
+                            <img src="/img/kakao1.png" className={style.kakao}></img>
+                            <p className={style.name}>최승민</p><br></br><br></br>
+                            <Button onClick={toggleDropdown}>동아리 찾아보기</Button>
+                            <div className={style.dropdown}>
+                                {isOpen && (
+                                    <ul className={style.list}>
+                                        {items.map((item, index) => (
+                                            <li className={style.li} key={index} onClick={() => handleItemClick(item)}>
+                                                {item.name}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {selectedItem1 && 
+                                <p className={style.select}><br></br>- {selectedItem1} -<br></br>
+                                {selectedItem2}<br></br><br></br>
+                                <Button className={style.but} onClick={openPopup2}>신청하기</Button></p>}
+
+                                {isPopupOpen2 && (
+                                    <div className={style.popup2}>
+                                        <div className={style.left}>
+                                            <p>신청자</p><br></br>
+                                            <p>동아리명</p><br></br>
+                                            <p>신청일</p><br></br>
+                                            <p>지원동기</p><br></br>
+                                        </div>
+                                        <div className={style.right}>
+                                            <p>최승민</p><br></br>
+                                            <p>{selectedItem1}</p><br></br>
+                                            <p>{currentDate}</p><br></br>
+                                            <p><input className={style.int} type='text'/></p><br></br>
+                                        </div>
+                                        <div className={style.button}>
+                                            <Button className={style.confirmButton2} onClick={closePopup2}>확인</Button>
+                                        </div>
+                                    </div>
+                                )}
+
+                            </div><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                            <br></br><br></br><br></br><br></br>
+                            <p>
+                                참가가 신청 된 동아리는 동아리장 또는 관리자의 확인 후 가입입이 완료 됩니다.
+                                신청 확인에 시간이 조금 걸릴 수 있으니 조금만 기다려 주세요!
+                            </p>
                         </Modal.Body>
                     </div>
                 </div>
