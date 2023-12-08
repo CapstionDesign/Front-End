@@ -1,9 +1,10 @@
 .Header{
     position: absolute;
-    left: 1%;
-    margin-top: -0.4%;
+    left: 65.5px;
     color: white;
+    margin-top: -2px;
     font-size: 80px;
+    font-family: 'Cafe24Ssurround';
 }
 .back{
     background-color: #5595FF;
@@ -325,4 +326,16 @@
     display: flex;
     top: 435px;
     margin-left: 185px;
+}
+.suya{
+    top: 22px;
+    position: absolute;
+    width: 50px;
+    left: 10px;
+}
+.suho{
+    top: 22px;
+    left: 513px;
+    position: absolute;
+    width: 63px;
 }
