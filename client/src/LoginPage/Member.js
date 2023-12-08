@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
-import axios from 'axios';
+import { Modal, Button, Form, Alert } from 'react-bootstrap';
 
 function LoginFormModal() {
 
@@ -9,7 +8,9 @@ function LoginFormModal() {
         memberPass: '',
         memberName: ''
       });
-    
+
+      const [message, setMessage] = useState(null);
+
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -27,31 +28,14 @@ function LoginFormModal() {
         })
         .then(response=>response.json())
         .then(data => {
+          setMessage({ type: 'success', text: '회원가입 성공!' });
           console.log(data);
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+          setMessage({ type: 'danger', text: '회원가입 실패!' });
+          console.log(err)
+        })
       }
-
-      /*
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-    
-        try {
-          const apiUrl = 'http://localhost:8080/api/v1/members';
-          const jsonData = JSON.stringify(formData);
-    
-          const response = await axios.post(apiUrl, jsonData, {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
-    
-          console.log('POST 요청 성공:', response.data);
-        } catch (error) {
-          console.error('POST 요청 실패:', error);
-        }
-      };
-      */
 
     return (
         <>
@@ -59,6 +43,7 @@ function LoginFormModal() {
                 <Modal.Title>회원가입</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+            {message && <Alert variant={message.type}>{message.text}</Alert>}
                 <Form onSubmit={handleSubmit}>
 
                     <Form.Group controlId="formMemberName">
@@ -68,7 +53,7 @@ function LoginFormModal() {
                     </Form.Group><br></br>
 
                     <Form.Group controlId="formMemberId">
-                        <Form.Label>로그인</Form.Label>
+                        <Form.Label>아이디</Form.Label>
                         <Form.Control type="text" name="memberId"
                             value={formData.memberId} onChange={handleChange} />
                     </Form.Group><br></br>
