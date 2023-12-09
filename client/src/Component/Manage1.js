@@ -5,10 +5,11 @@ import Content1 from '../Common/Content1';
 
 function MyPage() {
     return (
-            <div className={style.content}>
-                <Navbar2/>
-                <Content1/>
-            </div>
+            <>
+                    <Navbar2/>
+                    <Content1/>
+                
+            </>
     );
 }
 

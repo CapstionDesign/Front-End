@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './Content1.module.css';
 
-function Content(itemsPerPage){
+function Content(){
 
   const [isPopupOpen, setPopupOpen] = useState(true);
 
@@ -30,6 +30,24 @@ function Content(itemsPerPage){
         const ranges = ['전체', '1시간', '1일', '1주', '1개월', '3개월', '6개월'];
         const states = ['승인', '대기', '미승인'];
 
+        const [currentDate, setCurrentDate] = useState('');
+
+    useEffect(() => {
+        // 현재 날짜 객체 생성
+        const currentDateObj = new Date();
+
+        // 연, 월, 일 정보 가져오기
+        const year = currentDateObj.getFullYear();
+        const month = currentDateObj.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
+        const day = currentDateObj.getDate();
+
+        // 현재 날짜 문자열 생성
+        const formattedDate = `${year}-${month}-${day}`;
+
+        // 현재 날짜 업데이트
+        setCurrentDate(formattedDate);
+    }, []);
+
     return(
       <>
         {isPopupOpen && (
@@ -42,10 +60,10 @@ function Content(itemsPerPage){
                         <p>첨부파일</p>
                       </div>
                       <div className={style.right}>
-                        <p>John Doe</p><br></br>
-                        <p>React Club</p><br></br>
-                        <p>2023-01-01</p><br></br>
-                        <p>우리 동아리는 React에 관심 있는 사람들을 위한 동아리입니다.</p><br></br>
+                        <p>최승민</p><br></br>
+                        <p>맛따라멋따라</p><br></br>
+                        <p>{currentDate}</p><br></br>
+                        <p>우리 동아리는 맛집탐방에 관심 있는 사람들을 위한 동아리입니다.</p><br></br>
                         <p>첨부파일.pdf</p>
                       </div>
                       <div className={style.button}>
