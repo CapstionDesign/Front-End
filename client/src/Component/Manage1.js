@@ -6,9 +6,8 @@ import Content1 from '../Common/Content1';
 function MyPage() {
     return (
             <>
-                    <Navbar2/>
-                    <Content1/>
-                
+                <Navbar2/>
+                <Content1/>
             </>
     );
 }
