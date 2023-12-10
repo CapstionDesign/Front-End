@@ -25,35 +25,64 @@
     margin-left: 10px;
 }
 .content{
-    padding: 50px;
+    width: 95%;
     display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 38px;
+    margin-top: 15px;
 }
 .clublist {
     width: 100%;
     border: 1px solid black;
     text-align: center;
     border-radius: 10px;
-    
+    overflow: hidden;
 }
-  
+.table {
+    border: 1px solid black;
+}
+.clublist thead th, clublist thead tr {
+    border: 1px solid black;
+    width: 100px; /* 각 열의 너비를 100px로 고정 */
+    overflow: hidden; /* 필요한 경우 텍스트가 넘칠 때 숨김 처리 */
+    text-overflow: ellipsis; /* 필요한 경우 텍스트가 넘칠 때 ...으로 표시 */
+    white-space: nowrap; 
+    padding: 10px;
+}
+.clublist tbody th, .clublist tbody td {
+    border: 1px solid black;
+    padding: 10px;
+}
+.pageButton {
+    border-radius: 5px;
+}
 thead {
     background-color: #ddd; /* 회색 배경 설정 */
 }
-.club th, .club td {
-    border: 1px solid black;
-}
-  
-.club tr:nth-child(even) {
-    border: 1px solid black;
-}
-  
-.club tr:hover {
-    border: 1px solid black;
-}
 .pagination{
     position: absolute;
-    top: 400px;
+    top: 700px;
+    left: 620px;
+}
+.clublist th:first-child,
+.clublist td:first-child {
+  /* 여기에 원하는 너비를 지정하세요 */
+  width: 40px;
+}
+.del{
+    position: absolute;
+    top: 700px;
+    left: 27px;
+}
+.sel{
+    position: absolute;
+    top: 700px;
+    right: 27px;
+}
+.clubinfo {
+    font-family: 'Cafe24Ssurround';
 }
