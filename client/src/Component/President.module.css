@@ -14,10 +14,6 @@
     padding: 5px;
     padding-left: 30px;
     padding-right: 30px;
-    background-color: blue;
-    color: white;
-    border: 1px solid black;
-    border-radius: 10px;
     margin-top: 10px;
     margin-left: 30px;
 }
@@ -25,8 +21,6 @@
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    border: 1px solid black;
-    border-radius: 10px;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -35,13 +29,14 @@
     display: flex;
     align-items: center;
     text-align: center;
+    border-radius: 10px;
 }
 .clublist {
-    border-collapse: collapse;
     width: 100%;
     border: 1px solid black;
     text-align: center;
     border-radius: 10px;
+    
 }
   
 thead {
@@ -57,4 +52,8 @@ thead {
   
 .club tr:hover {
     border: 1px solid black;
+}
+.pagination{
+    position: absolute;
+    top: 400px;
 }

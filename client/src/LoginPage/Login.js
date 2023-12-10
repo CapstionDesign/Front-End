@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function LoginFormModal() {
 
@@ -19,12 +21,28 @@ function LoginFormModal() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // 여기에서 로그인 로직을 구현하거나, 부모 컴포넌트에 전달할 수 있음
-    console.log('Submitted:', formData);
-    handleClose(); // 모달 닫기
+    try {
+      // CSRF 토큰을 받아오는 요청
+      const csrfTokenResponse = await axios.get('http://localhost:8080/csrf-token');
+
+      // CSRF 토큰을 헤더에 설정
+      axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfTokenResponse.data.token;
+
+      // 로그인 요청
+      const loginResponse = await axios.post('http://localhost:8080/login', formData);
+
+      // 로그인 성공 처리
+      console.log('Login successful:', loginResponse.data);
+      handleClose(); // 모달 닫기
+    } catch (error) {
+      // 로그인 실패 처리
+      console.error('Login failed:', error);
+    }
   };
+  
+  
 
   return (
     <>
@@ -55,8 +73,8 @@ function LoginFormModal() {
                             />
                         </Form.Group>
                         <br></br>
-                        <Button variant="primary" type="submit">
-                        로그인
+                        <Button variant="primary" type="submit"><Link to={'/Mainpage2'}>
+                        로그인</Link>
                         </Button>
                     </Form>
                 </Modal.Body>
