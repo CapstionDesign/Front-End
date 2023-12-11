@@ -204,6 +204,7 @@ function MyPage(club) {
                     <option value="">직책을 선택하세요</option>
                     <option value="회장">회장</option>
                     <option value="부회장">부회장</option>
+                    <option value="일반회원">부원</option>
                     {/* 다른 직책도 필요에 따라 추가 */}
                   </Form.Control>
                 </Form.Group>

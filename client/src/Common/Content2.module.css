@@ -1,0 +1,102 @@
+.content1{
+    position: absolute;
+    left: 330px;
+    top: -190px;
+    z-index: 0;
+    padding: 0%;
+    width: 75%;
+}
+.content2{
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    width: 90%;
+    position: absolute;
+    margin-top: 290px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+}
+.content3{
+    margin-left: 50px;
+    margin-top: 340px;
+    padding: 30px;
+    width: 70%;
+    background-color: lightgray;
+}
+.content4{
+    margin-left: 19px;
+    margin-top: 30px;
+    padding: 30px;
+    width: 80%;
+}
+.application {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+}
+  
+thead {
+    background-color: #ddd; /* 회색 배경 설정 */
+}
+.application th, .application td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+  
+.application tr:nth-child(even) {
+    border: 1px solid black;
+}
+  
+.application tr:hover {
+    border: 1px solid black;
+}
+.popup{
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: 45%;
+    height: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: linear-gradient(to right, #ddd 20%, #fff 20%);
+    display: flex;
+    padding-top: 20px;
+    left: 400px;
+    top: 150px;
+    font-family: 'Cafe24Ssurround';
+}
+.left {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.right {
+    position: absolute;
+    margin-left: 160px;
+    margin-top: 10px;
+}
+.button {
+    margin-left: 360px;
+    margin-top: 340px;
+    text-align: bottom;
+}
+.leftbutton {
+    background-color: #2F80ED;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    color: white;
+}
+.rightbutton{
+    border: 0.5px solid black;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 10px;
+}
+.modal {
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}

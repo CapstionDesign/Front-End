@@ -59,9 +59,38 @@ function CustomModal(){
         setShowModal2(true); // 두 번째 모달 열기
     };
 
-    const handleModal3Open = () => {
+    const handleModal3Open = async () => {
         setShowModal2(false); // 첫 번째 모달 닫기
         setShowModal3(true); // 두 번째 모달 열기
+
+        const response = await fetch('http://localhost:8080/api/v1/members/student/{memberNo}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                memberName,
+                studentNo,
+                email,
+                memberNo,
+            }),
+        });
+
+        // 서버 응답 확인
+        if (response.ok) {
+        console.log('Data sent successfully!');
+        // 여기에서 추가적인 로직 수행 가능
+        } else {
+        console.error('Failed to send data to the server.');
+        }
+
+        // 서버 응답 확인
+        if (response.ok) {
+            console.log('Data sent successfully!');
+            // 여기에서 추가적인 로직 수행 가능
+        } else {
+            console.error('Failed to send data to the server.');
+        }
     };
 
     const handleModal4Open = () => {
@@ -139,6 +168,11 @@ function CustomModal(){
         setIsOpen(false);
     };
 
+    const [memberName, setMemberName] = useState('');
+    const [studentNo, setStudentNo] = useState('');
+    const [email, setEmail] = useState('');
+    const [memberNo, setMemberNo] = useState(''); 
+
     return (
         <>
             <Button variant="light" onClick={handleModal1Open} className={style.Signup}>마이페이지</Button>
@@ -164,9 +198,13 @@ function CustomModal(){
                             <span className={style.school1}>안녕하세요<br></br>
                             서비스 이용을 위해 학교 이메일 인증이 필요합니다.<br></br>
                             아래 빈칸을 입력하고 이메일을 인증한 후 서비스를 이용할 수 있습니다.</span>
-                            <p className={style.school2}>본명 <input id="username" className={style.input}></input></p>
-                            <p className={style.school3}>학번 <input id="usercode" className={style.input}></input></p>
-                            <p className={style.school4}>이메일 <input id="email" className={style.input}></input>@syuin.ac.kr</p>
+                            <input type="hidden" id="memberNo" value={memberNo} />
+                            <p className={style.school2}>본명 
+                                <input id="memberName" className={style.input} onChange={(e) => setMemberName(e.target.value)}></input></p>
+                            <p className={style.school3}>학번 
+                                <input id="studentNo" className={style.input} onChange={(e) => setStudentNo(e.target.value)}></input></p>
+                            <p className={style.school4}>이메일 
+                                <input id="email" className={style.input} onChange={(e) => setEmail(e.target.value)}></input>@syuin.ac.kr</p>
                             <Button onClick={handleModal3Open} className={style.button1}>코드 전송</Button>
                         </Modal.Body>
                     </div>
@@ -292,7 +330,7 @@ function CustomModal(){
                                             <p><input className={style.int} type='text'/></p><br></br>
                                         </div>
                                         <div className={style.button}>
-                                            <Button className={style.confirmButton2} onClick={closePopup2}>확인</Button>
+                                            <Button className={style.confirmButton2} onClick={closePopup2}>제출</Button>
                                         </div>
                                     </div>
                                 )}

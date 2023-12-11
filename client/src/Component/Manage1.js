@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import style from './MyPage.module.css';
 import Navbar2 from '../Common/Navbar2';
 import Content1 from '../Common/Content1';
 
