@@ -86,17 +86,25 @@
     width: 100%;
     top: 25%;
 }
+.school0{
+    position: absolute;
+    display: flex;
+    top: 165px;
+    padding: 0.5%;
+    color: rgba(0, 0, 0, 0.637);
+    margin-left: 63px;
+}
 .school1{
     position: absolute;
     display: flex;
     flex-grow: 1;
-    top: 100px;
+    top: 60px;
     color: rgba(0, 0, 0, 0.637);
     font-size: 13px;
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 .school2{
     position: absolute;
@@ -120,7 +128,7 @@
     top: 295px;
     padding: 0.5%;
     color: rgba(0, 0, 0, 0.637);
-    margin-left: 80px;
+    margin-left: 78px;
 }
 .button1{
     position: absolute;
@@ -395,7 +403,7 @@
     position: absolute;
     border: none;
     top: 530px;
-    left: 370px;
+    left: 385px;
 }
 .int{
     position: absolute;
