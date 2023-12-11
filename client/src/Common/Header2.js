@@ -59,19 +59,21 @@ function CustomModal(){
         setShowModal2(true); // 두 번째 모달 열기
     };
 
+    const memberNo = '1234'
+
     const handleModal3Open = async () => {
         setShowModal2(false); // 첫 번째 모달 닫기
         setShowModal3(true); // 두 번째 모달 열기
 
-        const response = await fetch('http://localhost:8080/api/v1/members/student/{memberNo}', {
+        const response = await fetch(`'http://localhost:8080/api/v1/members/student/${memberNo}'`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 memberName,
-                studentNo,
-                email,
+                hakNumber,
+                // email,
                 memberNo,
             }),
         });
@@ -82,14 +84,6 @@ function CustomModal(){
         // 여기에서 추가적인 로직 수행 가능
         } else {
         console.error('Failed to send data to the server.');
-        }
-
-        // 서버 응답 확인
-        if (response.ok) {
-            console.log('Data sent successfully!');
-            // 여기에서 추가적인 로직 수행 가능
-        } else {
-            console.error('Failed to send data to the server.');
         }
     };
 
@@ -169,9 +163,9 @@ function CustomModal(){
     };
 
     const [memberName, setMemberName] = useState('');
-    const [studentNo, setStudentNo] = useState('');
-    const [email, setEmail] = useState('');
-    const [memberNo, setMemberNo] = useState(''); 
+    const [hakNumber, setHakNumber] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [memberNo, setMemberNo] = useState(''); 
 
     return (
         <>
@@ -202,9 +196,7 @@ function CustomModal(){
                             <p className={style.school2}>본명 
                                 <input id="memberName" className={style.input} onChange={(e) => setMemberName(e.target.value)}></input></p>
                             <p className={style.school3}>학번 
-                                <input id="studentNo" className={style.input} onChange={(e) => setStudentNo(e.target.value)}></input></p>
-                            <p className={style.school4}>이메일 
-                                <input id="email" className={style.input} onChange={(e) => setEmail(e.target.value)}></input>@syuin.ac.kr</p>
+                                <input id="hakNumber" className={style.input} onChange={(e) => setHakNumber(e.target.value)}></input></p>
                             <Button onClick={handleModal3Open} className={style.button1}>코드 전송</Button>
                         </Modal.Body>
                     </div>
