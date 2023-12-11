@@ -28,6 +28,8 @@ function Header2() {
 function CustomModal(){
 
     const [currentDate, setCurrentDate] = useState('');
+    const [memberName, setMemberName] = useState('');
+    const [hakNumber, setHakNumber] = useState('');
 
     useEffect(() => {
         // 현재 날짜 객체 생성
@@ -65,25 +67,29 @@ function CustomModal(){
         setShowModal2(false); // 첫 번째 모달 닫기
         setShowModal3(true); // 두 번째 모달 열기
 
-        const response = await fetch(`'http://localhost:8080/api/v1/members/student/${memberNo}'`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                memberName,
-                hakNumber,
-                // email,
-                memberNo,
-            }),
-        });
+        try{
+            const response = await fetch(`http://localhost:8080/api/v1/members/students/${memberNo}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    memberName,
+                    hakNumber,
+                    // email,
+                    memberNo,
+                }),
+            });
 
-        // 서버 응답 확인
-        if (response.ok) {
-        console.log('Data sent successfully!');
-        // 여기에서 추가적인 로직 수행 가능
-        } else {
-        console.error('Failed to send data to the server.');
+            // 서버 응답 확인
+            if (response.ok) {
+            console.log('Data sent successfully!');
+            // 여기에서 추가적인 로직 수행 가능
+            } else {
+            console.error('Failed to send data to the server.');
+            }
+        } catch (error) {
+            console.error('An error occurred while sending data to the server:', error);
         }
     };
 
@@ -162,8 +168,6 @@ function CustomModal(){
         setIsOpen(false);
     };
 
-    const [memberName, setMemberName] = useState('');
-    const [hakNumber, setHakNumber] = useState('');
     // const [email, setEmail] = useState('');
     // const [memberNo, setMemberNo] = useState(''); 
 

@@ -54,7 +54,7 @@ function App() {
                     <Route path='/PresidentPage1' element={<PresidentPage1/>}/>
                     <Route path='/President' element={<President/>}/>
                   </Route>
-                  <Route path="/GameStart" element={<GameStart />} />
+                  <Route path="/GameStart" element={<GameStart/>} />
                 </Routes>
             </AnimatePresence>
         </BrowserRouter>
