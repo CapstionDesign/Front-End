@@ -1,9 +1,12 @@
 import Phaser from 'phaser';
 
 export default class MainWorld extends Phaser.Scene {
-
     constructor() {
         super({ key: 'MainWorld' });
+    }
+
+    init(data) {
+        this.player = data.player;
     }
 
     preload() {
@@ -16,6 +19,12 @@ export default class MainWorld extends Phaser.Scene {
         this.load.image("memorialHall", "img/building/school_memorial_hall.png");
         this.load.image("paulHall", "img/building/school_paul_hall.png");
         this.load.image("studentUnion", "img/building/school_student_union.png");
+
+        // 포탈 이미지
+        this.load.spritesheet("portal", "img/world/portal.png", {
+            frameWidth: 115.5,
+            frameHeight: 70
+        });
 
         // 캐릭터 이미지
         this.load.spritesheet("human", "img/character/nancy.png", {
@@ -67,7 +76,7 @@ export default class MainWorld extends Phaser.Scene {
         });
 
         // 건물 내부로 이동할 포탈 생성
-        const unionPortal = this.physics.add.sprite(3160, 2830, "portal");
+        const unionPortal = this.physics.add.sprite(3160, 2800, "portal", 10);
         unionPortal.setCollideWorldBounds(true);
 
         // 포탈과 플레이어 간 충돌 설정

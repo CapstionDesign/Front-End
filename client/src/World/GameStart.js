@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import MainWorld from './Scene/MainWorld.js';
 import Union1F from './Scene/Union1F.js';
 import config from './Config';
+import { MultiPlayerScene } from "./Scene/MultiPlayerScene";
 
 const GameStart = () => {
   const gameRef = useRef(null);
@@ -11,8 +12,9 @@ const GameStart = () => {
     const game = new Phaser.Game({
       ...config,
       scene: [
-        MainWorld,
-        Union1F
+        // MainWorld,
+          MultiPlayerScene,
+        // Union1F,
       ]
     });
 
