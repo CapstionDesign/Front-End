@@ -9,6 +9,12 @@ export default class Union1F extends Phaser.Scene {
     // 배경 화면
     this.load.image('Union1F', 'img/world/StudentUnion.png');
 
+    // 포탈 이미지
+    this.load.spritesheet("portal", "img/world/portal.png", {
+      frameWidth: 115.5,
+      frameHeight: 70
+    });
+
     // 캐릭터 이미지
     this.load.spritesheet("human", "assets/character/nancy.png", {
       frameWidth: 32,
@@ -53,7 +59,7 @@ export default class Union1F extends Phaser.Scene {
     this.cameras.main.startFollow(player);
 
     // 건물 내부로 이동할 포탈 생성
-    const mainPortal = this.physics.add.sprite(1680, 2240, "portal");
+    const mainPortal = this.physics.add.sprite(1680, 2250, "portal", 10);
     mainPortal.setCollideWorldBounds(true);
 
     // 포탈과 플레이어 간 충돌 설정
