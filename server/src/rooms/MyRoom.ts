@@ -7,24 +7,21 @@ export class MyRoom extends Room<MyRoomState> {
   onCreate(options: any) {
     this.setState(new MyRoomState());
 
-    // handle player input
     this.onMessage(0, (client, data) => {
-      // get reference to the player who sent the message
       const player = this.state.players.get(client.sessionId);
-      const velocity = 2;
+
+      const velocity = 10;
 
       const input = data;
 
       if (input.left) {
         player.x -= velocity;
-
       } else if (input.right) {
         player.x += velocity;
       }
 
       if (input.up) {
         player.y -= velocity;
-
       } else if (input.down) {
         player.y += velocity;
       }
@@ -33,17 +30,25 @@ export class MyRoom extends Room<MyRoomState> {
       this.broadcast("playerState", { sessionId: client.sessionId, x: player.x, y: player.y });
     });
 
+    this.onMessage('selectCharacter', (client, data) => {
+      const player = this.state.players.get(client.sessionId);
+
+      // set selected character for the player
+      player.selectedCharacter = data.character;
+
+      // broadcasting the player state to all clients in the room
+      this.broadcast('playerState', { sessionId: client.sessionId, x: player.x, y: player.y, selectedCharacter: player.selectedCharacter });
+    });
+
+
     // listen for changes in the room state and broadcast updates
-    this.state.players.onChange = () => {
+    this.state.players.onChange( () => {
       this.broadcast("playerState", this.state.players);
-    };
+    });
   }
 
   onJoin(client: Client, options: any) {
     console.log(client.sessionId, "joined!");
-
-    const mapWidth = 4800;
-    const mapHeight = 3200;
 
     // 플레이어 인스턴스 생성
     const player = new Player();
@@ -64,5 +69,4 @@ export class MyRoom extends Room<MyRoomState> {
   onDispose() {
     console.log("room", this.roomId, "disposing...");
   }
-
 }

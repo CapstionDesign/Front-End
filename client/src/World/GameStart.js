@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import Phaser from 'phaser';
-import MainWorld from './Scene/MainWorld.js';
-import Union1F from './Scene/Union1F.js';
+// import MainWorld from './Scene/MainWorld.js';
+// import Union1F from './Scene/Union1F.js';
 import config from './Config';
 import { MultiPlayerScene } from "./Scene/MultiPlayerScene";
+// import {CharacterSelectionScene} from "./Scene/CharacterSelectionScene";
 
 const GameStart = () => {
   const gameRef = useRef(null);
@@ -13,6 +14,7 @@ const GameStart = () => {
       ...config,
       scene: [
         // MainWorld,
+        //   CharacterSelectionScene,
           MultiPlayerScene,
         // Union1F,
       ]
