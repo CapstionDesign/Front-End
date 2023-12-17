@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import style from './Content2.module.css';
+import style from './Content3.module.css';
 import { Modal, Button } from 'react-bootstrap';
 
 function Content1(){
@@ -16,22 +16,22 @@ function Content1(){
       };
 
     const applications = [
-        { id: 1, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 2, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 3, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 4, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 5, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 6, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 7, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 8, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 9, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 10, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 11, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 12, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 13, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 14, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 15, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 16, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 1, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 2, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'Jane Smith', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 3, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 4, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 5, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 6, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'Jane Smith', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 7, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 8, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'Jane Smith', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 9, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 10, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'Jane Smith', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 11, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 12, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'Jane Smith', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 13, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 14, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'Jane Smith', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 15, applicant: 'John Doe', clubName: 'Club A', introduction: 'Jane Smith', attachment: 'John Doe', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 16, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'John Doe', attachment: 'Jane Smith', status: 'Approved', applicationDate: '2022-12-02' },
       ];
 
         const [selectedRange, setSelectedRange] = useState('전체');
@@ -157,7 +157,7 @@ function Content1(){
               )}
         <div className={style.content1}>
             <div className={style.content2}>
-                동아리 삭제 신청 현황
+                동아리장 변경 현황
             </div>
             <div className={style.content3}>
 
@@ -212,8 +212,8 @@ function Content1(){
                     <th>회원번호</th>
                     <th>신청자</th>
                     <th>동아리명</th>
-                    <th>삭제사유</th>
-                    <th>상태</th>
+                    <th>기존</th>
+                    <th>변경</th>
                     <th>신청일</th>
                   </tr>
                 </thead>
@@ -231,7 +231,7 @@ function Content1(){
                       <td>{application.applicant}</td>
                       <td>{application.clubName}</td>
                       <td>{application.introduction}</td>
-                      <td>{application.status}</td>
+                      <td>{application.attachment}</td>
                       <td>{application.applicationDate}</td>
                     </tr>
                   ))}
@@ -264,8 +264,8 @@ function Content1(){
                   <div>
                     <p>신청자 : {selectedMember.applicant}</p>
                     <p>동아리명 : {selectedMember.clubName}</p>
-                    <p>신청일 : {selectedMember.applicationDate}</p>
-                    <p>삭제사유 : {selectedMember.introduction}</p>
+                    <p>기존 : {selectedMember.introduction}</p>
+                    <p>변경 : {selectedMember.attachment}</p>
                   </div>
                 )}
               </Modal.Body>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import style from './Content2.module.css';
+import style from './Content4.module.css';
 import { Modal, Button } from 'react-bootstrap';
 
 function Content1(){
@@ -16,22 +16,22 @@ function Content1(){
       };
 
     const applications = [
-        { id: 1, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 2, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 3, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 4, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 5, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 6, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 7, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 8, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 9, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 10, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 11, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 12, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 13, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 14, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
-        { id: 15, applicant: 'John Doe', clubName: 'Club A', introduction: 'Introduction A', attachment: 'fileA.pdf', status: 'Pending', applicationDate: '2022-12-01' },
-        { id: 16, applicant: 'Jane Smith', clubName: 'Club B', introduction: 'Introduction B', attachment: 'fileB.pdf', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 1, applicant: 'John Doe', clubName: 'Club A', email: 'asdff913@syuin.ac.kr', Haknum: '2023101000', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 2, applicant: 'Jane Smith', clubName: 'Club B', email: 'sdf812@syuin.ac.kr', Haknum: '2023101001', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 3, applicant: 'John Doe', clubName: 'Club A', email: 'jhgfdf3134@syuin.ac.kr', Haknum: '2023101002', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 4, applicant: 'Jane Smith', clubName: 'Club B', email: 'hgdf613@syuin.ac.kr', Haknum: '2023101003', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 5, applicant: 'John Doe', clubName: 'Club A', email: 'dfsdf2134@syuin.ac.kr', Haknum: '2023101004', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 6, applicant: 'Jane Smith', clubName: 'Club B', email: 'fgsdf812@syuin.ac.kr', Haknum: '2023101005', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 7, applicant: 'John Doe', clubName: 'Club A', email: 'trsdf514@syuin.ac.kr', Haknum: '2023101006', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 8, applicant: 'Jane Smith', clubName: 'Club B', email: 'ersdf8134@syuin.ac.kr', Haknum: '2023101007', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 9, applicant: 'John Doe', clubName: 'Club A', email: 'wesdf512@syuin.ac.kr', Haknum: '2023101008', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 10, applicant: 'Jane Smith', clubName: 'Club B', email: 'qwsdf9234@syuin.ac.kr', Haknum: '2023101009', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 11, applicant: 'John Doe', clubName: 'Club A', email: 'bssdf213@syuin.ac.kr', Haknum: '2023101010', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 12, applicant: 'Jane Smith', clubName: 'Club B', email: 'hewsdf4234@syuin.ac.kr', Haknum: '2023101012', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 13, applicant: 'John Doe', clubName: 'Club A', email: 'sdf823@syuin.ac.kr', Haknum: '2023101039', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 14, applicant: 'Jane Smith', clubName: 'Club B', email: 'fgsdf6234@syuin.ac.kr', Haknum: '2023101059', status: 'Approved', applicationDate: '2022-12-02' },
+        { id: 15, applicant: 'John Doe', clubName: 'Club A', email: 'pousdf913@syuin.ac.kr', Haknum: '2023101094', status: 'Pending', applicationDate: '2022-12-01' },
+        { id: 16, applicant: 'Jane Smith', clubName: 'Club B', email: 'utyrsdf5234@syuin.ac.kr', Haknum: '2023101092', status: 'Approved', applicationDate: '2022-12-02' },
       ];
 
         const [selectedRange, setSelectedRange] = useState('전체');
@@ -157,7 +157,7 @@ function Content1(){
               )}
         <div className={style.content1}>
             <div className={style.content2}>
-                동아리 삭제 신청 현황
+                전체회원 관리
             </div>
             <div className={style.content3}>
 
@@ -210,11 +210,11 @@ function Content1(){
                           />
                     </th>
                     <th>회원번호</th>
-                    <th>신청자</th>
-                    <th>동아리명</th>
-                    <th>삭제사유</th>
-                    <th>상태</th>
-                    <th>신청일</th>
+                    <th>회원명</th>
+                    <th>학번</th>
+                    <th>이메일</th>
+                    <th>소속동아리</th>
+                    <th>가입일</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -229,9 +229,9 @@ function Content1(){
                       </td>
                       <td>{application.id}</td>
                       <td>{application.applicant}</td>
+                      <td>{application.Haknum}</td>
+                      <td>{application.email}</td>
                       <td>{application.clubName}</td>
-                      <td>{application.introduction}</td>
-                      <td>{application.status}</td>
                       <td>{application.applicationDate}</td>
                     </tr>
                   ))}
@@ -262,19 +262,19 @@ function Content1(){
               <Modal.Body>
                 {selectedMember && (
                   <div>
-                    <p>신청자 : {selectedMember.applicant}</p>
-                    <p>동아리명 : {selectedMember.clubName}</p>
-                    <p>신청일 : {selectedMember.applicationDate}</p>
-                    <p>삭제사유 : {selectedMember.introduction}</p>
+                    <p>회원명 : {selectedMember.applicant}</p>
+                    <p>학번 : {selectedMember.Haknum}</p>
+                    <p>이메일 : {selectedMember.email}</p>
+                    <p>소속동아리 : {selectedMember.clubName}</p>
                   </div>
                 )}
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="primary" onClick={handleUpdateMember}>
-                  승인
+                  확인
                 </Button>
                 <Button variant="secondary" onClick={handleClose}>
-                  반려
+                  삭제
                 </Button>
               </Modal.Footer>
             </Modal>

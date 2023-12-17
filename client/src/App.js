@@ -19,9 +19,8 @@ import GameStart from "./World/GameStart";
 import Club1 from './MyPage/Club1';
 import Manage1 from './Component/Manage1';
 import Manage2 from './Component/Manage2';
-import ManagePage1 from './ManagePage/ManagePage1';
-import ManagePage2 from './ManagePage/ManagePage2';
-import PresidentPage1 from './President/PresidentPage1';
+import Manage3 from './Component/Manage3';
+import Manage4 from './Component/Manage4';
 import President from './Component/President';
 
 function App() {
@@ -45,13 +44,12 @@ function App() {
                     <Route path='/School' element={<School/>}/>
                     <Route path='/Manage1' element={<Manage1/>}/>
                     <Route path='/Manage2' element={<Manage2/>}/>
+                    <Route path='/Manage3' element={<Manage3/>}/>
+                    <Route path='/Manage4' element={<Manage4/>}/>
                     <Route path='/Email1' element={<Email1/>}/>
                     <Route path='/Email2' element={<Email2/>}/>
                     <Route path='/Email3' element={<Email3/>}/>
                     <Route path='/Club1' element={<Club1/>}/>
-                    <Route path='/ManagePage1' element={<ManagePage1/>}/>
-                    <Route path='/ManagePage2' element={<ManagePage2/>}/>
-                    <Route path='/PresidentPage1' element={<PresidentPage1/>}/>
                     <Route path='/President' element={<President/>}/>
                   </Route>
                   <Route path="/GameStart" element={<GameStart/>} />
