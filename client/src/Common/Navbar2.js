@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import style from './Navbar2.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar2() {
     return(
@@ -18,22 +18,22 @@ function Navbar1() {
 
     const handleButtonClick1 = () => {
         // 버튼 클릭 시 다른 페이지로 이동
-        navigate('/manage');
+        navigate('/manage1');
         setIsBold1(true);
     };
     const handleButtonClick2 = () => {
         // 버튼 클릭 시 다른 페이지로 이동
-        navigate('/manage');
+        navigate('/manage2');
         setIsBold2(true);
     };
     const handleButtonClick3 = () => {
         // 버튼 클릭 시 다른 페이지로 이동
-        navigate('/manage');
+        navigate('/manage3');
         setIsBold3(true);
     };
     const handleButtonClick4 = () => {
         // 버튼 클릭 시 다른 페이지로 이동
-        navigate('/manage');
+        navigate('/manage4');
         setIsBold4(true);
     };
 
