@@ -72,12 +72,16 @@ function LoginFormModal() {
                                 onChange={handleChange}
                             />
                         </Form.Group>
-                        <br></br>
-                        <Button variant="primary" type="submit"><Link to={'/Mainpage2'}>
-                        로그인</Link>
-                        </Button>
                     </Form>
                 </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="primary" type="submit"><Link to={'/Mainpage2'}>
+                          로그인</Link>
+                        </Button>
+                        <Button variant="secondary" type="submit"><Link to={'/Manage1'}>
+                          관리자</Link>
+                        </Button>
+                </Modal.Footer>
     </>
   );
 }

@@ -250,7 +250,8 @@ function CustomModal(){
                             </p>
                             <Button onClick={handleModal5Open} className={style.school13}>동아리 개설 신청</Button>
                             <Button onClick={handleModal6Open} className={style.school14}>동아리 참가 신청</Button>
-                            <Button className={style.delete}>회원 탈퇴하기</Button>
+                            <Button className={style.del}><Link to={'/president'}>동아리 관리하기</Link></Button>
+                            <Button variant="secondary" className={style.ete}>회원 탈퇴하기</Button>
                         </Modal.Body>
                     </div>
                 </div>
