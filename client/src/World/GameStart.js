@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import Phaser from 'phaser';
-// import MainWorld from './Scene/MainWorld.js';
-// import Union1F from './Scene/Union1F.js';
+import MainWorld from './Scene/MainWorld.js';
+import Union1F from './Scene/Union1F.js';
 import config from './Config';
-import { MultiPlayerScene } from "./Scene/MultiPlayerScene";
-// import {CharacterSelectionScene} from "./Scene/CharacterSelectionScene";
+import Union2F from "./Scene/Union2F";
 
 const GameStart = () => {
   const gameRef = useRef(null);
@@ -13,10 +12,9 @@ const GameStart = () => {
     const game = new Phaser.Game({
       ...config,
       scene: [
-        // MainWorld,
-        //   CharacterSelectionScene,
-          MultiPlayerScene,
-        // Union1F,
+          MainWorld,
+          Union1F,
+          Union2F
       ]
     });
 
@@ -27,7 +25,9 @@ const GameStart = () => {
     gameRef.current = game;
 
     return () => {
-      game.destroy(true);
+      if (gameRef.current) {
+        gameRef.current.destroy(true);
+      }
     };
   }, []);
 
