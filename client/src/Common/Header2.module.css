@@ -71,11 +71,17 @@
     top: 145px;
     text-align: center;
 }
-.delete{
+.del{
     position: absolute;
     display: flex;
     top: 435px;
-    margin-left: 170px;
+    margin-left: 20px;
+}
+.ete{
+    position: absolute;
+    display: flex;
+    top: 435px;
+    margin-left: 323px;
 }
 .content2{
     color: black;
