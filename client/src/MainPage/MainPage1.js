@@ -39,7 +39,7 @@ function Main2(){
         <div className={style.layout}>
                 <img src="/img/Main2.png" className={style.main2}/>
                 <div>
-                    <p class={style.text1}>동아리 회원들과 채팅하기!</p>
+                    <p class={style.text1}>동아리 회원들과 움직이기!</p>
                     <p class={style.text2}>각 동아리방에서 부원들과</p>
                     <p class={style.text2}>자유롭게 소통할 수 있습니다.</p>
                 </div>
@@ -51,9 +51,9 @@ function Main3(){
     return(
         <div className={style.layout}>
                 <div>
-                    <p class={style.text3}>우리만의 동아리방 꾸미기!</p>
+                    <p class={style.text3}>우리만의 동아리방 만들기!</p>
                     <p class={style.text4}>각 동아리마다 동아리방을 부여 받아</p>
-                    <p class={style.text4}>각자 원하는대로 꾸밀 수 있습니다.</p>
+                    <p class={style.text4}>각자 공간을 가질 수 있습니다.</p>
                 </div>
             <img src="/img/Main3.png" className={style.main3}/>
         </div>

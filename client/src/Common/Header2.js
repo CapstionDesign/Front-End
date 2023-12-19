@@ -183,7 +183,7 @@ function CustomModal(){
                                 <Button onClick={handleModal2Open} className={style.school}>
                                         학교인증하기
                                 </Button>
-                                <Button className={style.delete}>회원 탈퇴하기</Button>
+                                <Button variant="secondary" className={style.delete}>회원 탈퇴하기</Button>
                             </Modal.Body>
                         </div>
                 </div>
