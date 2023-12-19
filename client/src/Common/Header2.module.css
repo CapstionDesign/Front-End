@@ -77,6 +77,12 @@
     top: 435px;
     margin-left: 20px;
 }
+.delete{
+    position: absolute;
+    display: flex;
+    top: 435px;
+    margin-left: 170px;
+}
 .ete{
     position: absolute;
     display: flex;
