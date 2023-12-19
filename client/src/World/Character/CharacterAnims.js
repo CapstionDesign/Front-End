@@ -42,7 +42,7 @@ export const createCharacterAnims = (anims, sessionId, characterKey) => {
 
         anims.create({
             key: animationKeys.turn,
-            frames: anims.generateFrameNumbers(characterKey, { start: 21, end: 21 }),
+            frames: [{key: characterKey, frame: 21}],
             frameRate: 20
         });
     }

@@ -1,11 +1,23 @@
 import { createCharacterAnims } from './CharacterAnims';
 
-export const createPlayerMovements = (scene, sessionId, characterKey, playerEntities) => {
-    const animationKeys = createCharacterAnims(scene.anims, sessionId, characterKey);
-    console.log(animationKeys);
-    console.log(animationKeys.left);
+export const createPlayerMovements = (scene, cursorKeys, room, characterKey) => {
+    const animationKeys = createCharacterAnims(scene.anims, room.sessionId, characterKey);
+    // 서버로 이동 정보를 전송하는 함수
+    let velocity = 6;
+    const sendMoveInfo = () => {
+        room.send("move", {
+            left: cursorKeys.left.isDown,
+            right: cursorKeys.right.isDown,
+            up: cursorKeys.up.isDown,
+            down: cursorKeys.down.isDown
+        });
+    };
+    const decreasePlayerSpeed = (player) => {
+        velocity = 0;
+        player.setVelocity(0);
+    }
 
-    const handleInput = (cursorKeys, inputPayload) => {
+    const handleInput = (inputPayload) => {
         inputPayload.left = cursorKeys.left.isDown;
         inputPayload.right = cursorKeys.right.isDown;
         inputPayload.up = cursorKeys.up.isDown;
@@ -13,23 +25,21 @@ export const createPlayerMovements = (scene, sessionId, characterKey, playerEnti
     };
 
     const updatePlayerPosition = (inputPayload, currentPlayer) => {
-        if (!currentPlayer || !playerEntities) {
+        if (!currentPlayer) {
             return;
         }
 
-        const velocity = 200;
-
         if (inputPayload.left) {
-            currentPlayer.x -= velocity;
+            currentPlayer.setVelocityX(-velocity);
             currentPlayer.anims.play(animationKeys.left, true);
         } else if (inputPayload.right) {
-            currentPlayer.x += velocity;
+            currentPlayer.setVelocityX(velocity);
             currentPlayer.anims.play(animationKeys.right, true);
         } else if (inputPayload.up) {
-            currentPlayer.y -= velocity;
+            currentPlayer.setVelocityY(-velocity);
             currentPlayer.anims.play(animationKeys.up, true);
         } else if (inputPayload.down) {
-            currentPlayer.y += velocity;
+            currentPlayer.setVelocityY(velocity);
             currentPlayer.anims.play(animationKeys.down, true);
         } else {
             currentPlayer.setVelocityX(0);
@@ -40,7 +50,10 @@ export const createPlayerMovements = (scene, sessionId, characterKey, playerEnti
     };
 
     return {
+        animationKeys,
+        sendMoveInfo,
         handleInput,
         updatePlayerPosition,
+        decreasePlayerSpeed
     };
 };

@@ -11,7 +11,7 @@ export default class MainWorld extends Phaser.Scene {
 
     preload() {
         // 배경 이미지
-        this.load.image("mainWorld", "img/world/MainWorld.png");
+        this.load.image("mainWorld", "img/world/Campus.png");
 
         // 건물 이미지
         this.load.image("ezraHall", "img/building/school_ezra_hall.png");
@@ -78,15 +78,18 @@ export default class MainWorld extends Phaser.Scene {
         // 건물 내부로 이동할 포탈 생성
         const unionPortal = this.physics.add.sprite(3160, 2800, "portal", 10);
         unionPortal.setCollideWorldBounds(true);
+        unionPortal.setImmovable(true);
 
         // 포탈과 플레이어 간 충돌 설정
         this.physics.add.collider(player, unionPortal, () => {
+            unionPortal.setVelocity(0);
+
             // 초기 좌표를 고정
             this.registry.set('playerData', { x: 1680, y: 2150 });
-
-            // 새로운 맵으로 전환
-            this.scene.start("Union1F");
-        }, null, this);
+            this.time.delayedCall(500, () => {
+                this.scene.start("Union1F");
+            }, null, this);
+        });
 
         // 오른쪽으로 움직이는 컷
         this.anims.create({
@@ -131,7 +134,7 @@ export default class MainWorld extends Phaser.Scene {
         const cursors = this.input.keyboard.createCursorKeys();
 
         const player = this.children.getByName("player");
-        const speed = 400;
+        const speed = 350;
         if (cursors.left.isDown) {
             player.setVelocityX(-speed);
 
